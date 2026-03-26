@@ -554,113 +554,116 @@ const T = {
 };
 
 // ════════════════════════════════════════════════
-// Lesson data
+// Lesson data — unified schedule, same dates for EN and ES
 // ════════════════════════════════════════════════
 const LESSONS = {
   en:[
-    {w:1,  d:"Dec 30–Jan 5",   title:"This Is My Work and My Glory",                     ref:"Moses 1; Abraham 3"},
-    {w:2,  d:"Jan 6–12",       title:"In the Beginning God Created the Heaven and Earth", ref:"Moses 2–3; Abraham 4–5"},
-    {w:3,  d:"Jan 13–19",      title:"The Fall",                                          ref:"Genesis 3–4; Moses 4–5"},
-    {w:4,  d:"Jan 26–Feb 1",   title:"And Adam Knew His Wife",                            ref:"Genesis 5; Moses 6"},
-    {w:5,  d:"Feb 2–8",        title:"Enoch Walked with God",                             ref:"Moses 7"},
-    {w:6,  d:"Feb 9–15",       title:"Noah Found Grace in the Eyes of the Lord",          ref:"Genesis 6–11; Moses 8"},
-    {w:7,  d:"Feb 16–22",      title:"I Will Make of Thee a Great Nation",                ref:"Genesis 12–17; Abraham 1–2"},
-    {w:8,  d:"Feb 23–Mar 1",   title:"Is Any Thing Too Hard for the Lord?",               ref:"Genesis 18–23"},
-    {w:9,  d:"Mar 2–8",        title:"God Will Provide Himself a Lamb",                   ref:"Genesis 24–33"},
-    {w:10, d:"Mar 9–15",       title:"The Lord Was with Joseph",                          ref:"Genesis 37–41"},
-    {w:11, d:"Mar 16–22",      title:"Ye Are My Brethren",                                ref:"Genesis 42–50"},
-    {w:12, d:"Mar 23–29",      title:"Come Now Therefore, and I Will Send Thee",          ref:"Exodus 1–6"},
-    {w:13, d:"Apr 6–12",       title:"He That Kept the Passover",                         ref:"Exodus 7–13"},
-    {w:14, d:"Apr 13–19",      title:"Fear Ye Not, Stand Still",                          ref:"Exodus 14–18"},
-    {w:15, d:"Apr 20–26",      title:"All That the Lord Hath Spoken We Will Do",          ref:"Exodus 19–20; 24; 31–34"},
-    {w:16, d:"Apr 27–May 3",   title:"Let Them Make Me a Sanctuary",                      ref:"Exodus 35–40; Leviticus 1;4;16;19"},
-    {w:17, d:"May 4–10",       title:"Murmur Not",                                        ref:"Numbers 11–14; 20–24; 27"},
-    {w:18, d:"May 11–17",      title:"Choose Life",                                       ref:"Deuteronomy 6–8; 15; 18; 29–30; 34"},
-    {w:19, d:"May 18–24",      title:"Be Strong and of a Good Courage",                   ref:"Joshua 1–8; 23–24"},
-    {w:20, d:"May 25–31",      title:"The Lord Raised Up a Deliverer",                    ref:"Judges 2–4; 6–8; 13–16"},
-    {w:21, d:"Jun 1–7",        title:"Intreat Me Not to Leave Thee",                      ref:"Ruth; 1 Samuel 1–7"},
-    {w:22, d:"Jun 8–14",       title:"The Lord Looketh on the Heart",                     ref:"1 Samuel 8–10; 13; 15–16"},
-    {w:23, d:"Jun 15–21",      title:"I Have Found David My Servant",                     ref:"1 Samuel 17–18; 24–26; 2 Samuel 5–7"},
-    {w:24, d:"Jun 22–28",      title:"Create in Me a Clean Heart",                        ref:"2 Samuel 11–12; 1 Kings 3; 6–9; 11"},
-    {w:25, d:"Jun 29–Jul 5",   title:"I, Even I Only, Am Left",                          ref:"1 Kings 12–13; 17–22"},
-    {w:26, d:"Jul 6–12",       title:"Elisha Saw It and Cried",                           ref:"2 Kings 2–7"},
-    {w:27, d:"Jul 13–19",      title:"Prepare Your Heart unto the Lord",                  ref:"2 Kings 16–25"},
-    {w:28, d:"Jul 20–26",      title:"Seek the Lord and His Strength",                    ref:"2 Chronicles 14–20; 26; 30"},
-    {w:29, d:"Jul 27–Aug 2",   title:"They Strengthened Their Hands for the Good Work",   ref:"Ezra 1; 3–7; Nehemiah 2; 4–6; 8"},
-    {w:30, d:"Aug 3–9",        title:"For Such a Time as This",                           ref:"Esther"},
-    {w:31, d:"Aug 10–16",      title:"I Know That My Redeemer Liveth",                    ref:"Job 1–3; 12–14; 19; 21–24; 38–40; 42"},
-    {w:32, d:"Aug 17–23",      title:"The Lord Is My Shepherd",                           ref:"Psalms 1–2; 8; 19–33; 40; 46"},
-    {w:33, d:"Aug 24–30",      title:"O Praise the Lord",                                 ref:"Psalms 49–51; 61–66; 69–72; 77–78; 85–86"},
-    {w:34, d:"Aug 31–Sep 6",   title:"Singing and Rejoicing",                             ref:"Psalms 102–103; 110; 116–119; 127–128; 135–139; 146–150"},
-    {w:35, d:"Sep 7–13",       title:"Seek First to Understand",                          ref:"Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12"},
-    {w:36, d:"Sep 14–20",      title:"The Word of the Lord Came to Me",                   ref:"Isaiah 1–12"},
-    {w:37, d:"Sep 21–27",      title:"Lift Up Your Eyes",                                 ref:"Isaiah 13–14; 22; 24–30; 35"},
-    {w:38, d:"Sep 28–Oct 4",   title:"Thy Maker Is Thine Husband",                        ref:"Isaiah 40–49"},
-    {w:39, d:"Oct 5–11",       title:"Every Knee Shall Bow",                              ref:"Isaiah 50–57"},
-    {w:40, d:"Oct 12–18",      title:"I Will Gather Them",                                ref:"Isaiah 58–66"},
-    {w:41, d:"Oct 19–25",      title:"The Word of the Lord Came to Me",                   ref:"Jeremiah 1–3; 7; 16–18; 20"},
-    {w:42, d:"Oct 26–Nov 1",   title:"I Will Write My Law in Their Hearts",               ref:"Jeremiah 31–33; 36–38; Lamentations 1; 3"},
-    {w:43, d:"Nov 2–8",        title:"I Will Put My Spirit within You",                   ref:"Ezekiel 1–3; 33–34; 36–37; 47"},
-    {w:44, d:"Nov 9–15",       title:"These Men Who Serve God",                           ref:"Daniel 1–7"},
-    {w:45, d:"Nov 16–22",      title:"I Will Betroth Thee unto Me",                       ref:"Hosea 1–6; 10–14; Joel"},
-    {w:46, d:"Nov 23–29",      title:"The Day of the Lord Is Near",                       ref:"Amos; Obadiah; Jonah"},
-    {w:47, d:"Nov 30–Dec 6",   title:"What Doth the Lord Require of Thee",                ref:"Micah; Nahum; Habakkuk; Zephaniah"},
-    {w:48, d:"Dec 7–13",       title:"I Will Be Their God",                               ref:"Haggai 1–2; Zechariah 1–4; 7–14"},
-    {w:49, d:"Dec 14–20",      title:"The Sun of Righteousness Shall Arise",              ref:"Malachi"},
-    {w:50, d:"Dec 21–27",      title:"Christmas",                                         ref:"Luke 1–2; Matthew 1–2"},
+    {w:1,  d:"Dec 29–Jan 4",   title:"Introduction to the Old Testament",              ref:"Introduction"},
+    {w:2,  d:"Jan 5–11",       title:"This Is My Work and My Glory",                   ref:"Moses 1; Abraham 3"},
+    {w:3,  d:"Jan 12–18",      title:"In the Beginning God Created the Heaven and Earth", ref:"Genesis 1–2; Moses 2–3; Abraham 4–5"},
+    {w:4,  d:"Jan 19–25",      title:"The Fall of Adam and Eve",                        ref:"Genesis 3–4; Moses 4–5"},
+    {w:5,  d:"Jan 26–Feb 1",   title:"And Adam Knew His Wife",                          ref:"Genesis 5; Moses 6"},
+    {w:6,  d:"Feb 2–8",        title:"Enoch Walked with God",                           ref:"Moses 7"},
+    {w:7,  d:"Feb 9–15",       title:"Noah Found Grace in the Eyes of the Lord",        ref:"Genesis 6–11; Moses 8"},
+    {w:8,  d:"Feb 16–22",      title:"I Will Make of Thee a Great Nation",              ref:"Genesis 12–17; Abraham 1–2"},
+    {w:9,  d:"Feb 23–Mar 1",   title:"Is Any Thing Too Hard for the Lord?",             ref:"Genesis 18–23"},
+    {w:10, d:"Mar 2–8",        title:"God Will Provide Himself a Lamb",                 ref:"Genesis 24–33"},
+    {w:11, d:"Mar 9–15",       title:"The Lord Was with Joseph",                        ref:"Genesis 37–41"},
+    {w:12, d:"Mar 16–22",      title:"Ye Are My Brethren",                              ref:"Genesis 42–50"},
+    {w:13, d:"Mar 23–29",      title:"Come Now Therefore, and I Will Send Thee",        ref:"Exodus 1–6"},
+    {w:14, d:"Mar 30–Apr 5",   title:"Easter: He Will Swallow Up Death in Victory",     ref:"Easter"},
+    {w:15, d:"Apr 6–12",       title:"Remember This Day, in Which Ye Came Out from Egypt", ref:"Exodus 7–13"},
+    {w:16, d:"Apr 13–19",      title:"Stand Still, and See the Salvation of the Lord",  ref:"Exodus 14–18"},
+    {w:17, d:"Apr 20–26",      title:"All That the Lord Hath Spoken We Will Do",        ref:"Exodus 19–20; 24; 31–34"},
+    {w:18, d:"Apr 27–May 3",   title:"Let Them Make Me a Sanctuary",                   ref:"Exodus 35–40; Leviticus 1; 4; 16; 19"},
+    {w:19, d:"May 4–10",       title:"Murmur Not",                                      ref:"Numbers 11–14; 20–24; 27"},
+    {w:20, d:"May 11–17",      title:"Choose Life",                                     ref:"Deuteronomy 6–8; 15; 18; 29–30; 34"},
+    {w:21, d:"May 18–24",      title:"Be Strong and of a Good Courage",                 ref:"Joshua 1–8; 23–24"},
+    {w:22, d:"May 25–31",      title:"The Lord Raised Up a Deliverer",                  ref:"Judges 2–4; 6–8; 13–16"},
+    {w:23, d:"Jun 1–7",        title:"Intreat Me Not to Leave Thee",                    ref:"Ruth; 1 Samuel 1–7"},
+    {w:24, d:"Jun 8–14",       title:"The Lord Looketh on the Heart",                   ref:"1 Samuel 8–10; 13; 15–16"},
+    {w:25, d:"Jun 15–21",      title:"I Have Found David My Servant",                   ref:"1 Samuel 17–18; 24–26; 2 Samuel 5–7"},
+    {w:26, d:"Jun 22–28",      title:"Create in Me a Clean Heart",                      ref:"2 Samuel 11–12; 1 Kings 3; 6–9; 11"},
+    {w:27, d:"Jun 29–Jul 5",   title:"I, Even I Only, Am Left",                        ref:"1 Kings 12–13; 17–22"},
+    {w:28, d:"Jul 6–12",       title:"Elisha Saw It and Cried",                         ref:"2 Kings 2–7"},
+    {w:29, d:"Jul 13–19",      title:"Prepare Your Heart unto the Lord",                ref:"2 Kings 16–25"},
+    {w:30, d:"Jul 20–26",      title:"Seek the Lord and His Strength",                  ref:"2 Chronicles 14–20; 26; 30"},
+    {w:31, d:"Jul 27–Aug 2",   title:"They Strengthened Their Hands for the Good Work", ref:"Ezra 1; 3–7; Nehemiah 2; 4–6; 8"},
+    {w:32, d:"Aug 3–9",        title:"For Such a Time as This",                         ref:"Esther"},
+    {w:33, d:"Aug 10–16",      title:"I Know That My Redeemer Liveth",                  ref:"Job 1–3; 12–14; 19; 21–24; 38–40; 42"},
+    {w:34, d:"Aug 17–23",      title:"The Lord Is My Shepherd",                         ref:"Psalms 1–2; 8; 19–33; 40; 46"},
+    {w:35, d:"Aug 24–30",      title:"O Praise the Lord",                               ref:"Psalms 49–51; 61–66; 69–72; 77–78; 85–86"},
+    {w:36, d:"Aug 31–Sep 6",   title:"Singing and Rejoicing",                           ref:"Psalms 102–3; 110; 116–19; 127–28; 135–39; 146–50"},
+    {w:37, d:"Sep 7–13",       title:"Seek First to Understand",                        ref:"Proverbs 1–4; 15–16; 22; 31; Ecclesiastes 1–3; 11–12"},
+    {w:38, d:"Sep 14–20",      title:"The Word of the Lord Came to Me",                 ref:"Isaiah 1–12"},
+    {w:39, d:"Sep 21–27",      title:"Lift Up Your Eyes",                               ref:"Isaiah 13–14; 22; 24–30; 35"},
+    {w:40, d:"Sep 28–Oct 4",   title:"Thy Maker Is Thine Husband",                      ref:"Isaiah 40–49"},
+    {w:41, d:"Oct 5–11",       title:"Every Knee Shall Bow",                            ref:"Isaiah 50–57"},
+    {w:42, d:"Oct 12–18",      title:"I Will Gather Them",                              ref:"Isaiah 58–66"},
+    {w:43, d:"Oct 19–25",      title:"The Word of the Lord Came to Me",                 ref:"Jeremiah 1–3; 7; 16–18; 20"},
+    {w:44, d:"Oct 26–Nov 1",   title:"I Will Write My Law in Their Hearts",             ref:"Jeremiah 31–33; 36–38; Lamentations 1; 3"},
+    {w:45, d:"Nov 2–8",        title:"I Will Put My Spirit within You",                 ref:"Ezekiel 1–3; 33–34; 36–37; 47"},
+    {w:46, d:"Nov 9–15",       title:"These Men Who Serve God",                         ref:"Daniel 1–7"},
+    {w:47, d:"Nov 16–22",      title:"I Will Betroth Thee unto Me",                     ref:"Hosea 1–6; 10–14; Joel"},
+    {w:48, d:"Nov 23–29",      title:"The Day of the Lord Is Near",                     ref:"Amos; Obadiah; Jonah"},
+    {w:49, d:"Nov 30–Dec 6",   title:"What Doth the Lord Require of Thee",              ref:"Micah; Nahum; Habakkuk; Zephaniah"},
+    {w:50, d:"Dec 7–13",       title:"I Will Be Their God",                             ref:"Haggai 1–2; Zechariah 1–4; 7–14"},
+    {w:51, d:"Dec 14–20",      title:"The Sun of Righteousness Shall Arise",            ref:"Malachi"},
+    {w:52, d:"Dec 21–27",      title:"Christmas",                                       ref:"Christmas"},
   ],
   es:[
-    {w:1,  d:"29 dic–4 ene",   title:"Introducción al Antiguo Testamento",                ref:"Introducción"},
-    {w:2,  d:"5–11 ene",       title:"Esta es mi obra y mi gloria",                       ref:"Moisés 1; Abraham 3"},
-    {w:3,  d:"12–18 ene",      title:"En el principio creó Dios los cielos y la tierra",  ref:"Génesis 1–2; Moisés 2–3; Abraham 4–5"},
-    {w:4,  d:"19–25 ene",      title:"La Caída",                                          ref:"Génesis 3–4; Moisés 4–5"},
-    {w:5,  d:"26 ene–1 feb",   title:"Y conoció Adán a su mujer",                         ref:"Génesis 5; Moisés 6"},
-    {w:6,  d:"2–8 feb",        title:"Enoc anduvo con Dios",                              ref:"Moisés 7"},
-    {w:7,  d:"9–15 feb",       title:"Noé halló gracia ante los ojos de Jehová",          ref:"Génesis 6–11; Moisés 8"},
-    {w:8,  d:"16–22 feb",      title:"Te haré una nación grande",                         ref:"Génesis 12–17; Abraham 1–2"},
-    {w:9,  d:"23 feb–1 mar",   title:"¿Hay para Dios alguna cosa difícil?",               ref:"Génesis 18–23"},
-    {w:10, d:"2–8 mar",        title:"Dios proveerá para sí el cordero",                  ref:"Génesis 24–33"},
-    {w:11, d:"9–15 mar",       title:"El Señor estaba con José",                          ref:"Génesis 37–41"},
-    {w:12, d:"16–22 mar",      title:"Vosotros sois mis hermanos",                        ref:"Génesis 42–50"},
-    {w:13, d:"23–29 mar",      title:"Ven, pues, y te enviaré",                           ref:"Éxodo 1–6"},
-    {w:14, d:"6–12 abr",       title:"El que guardó la pascua",                           ref:"Éxodo 7–13"},
-    {w:15, d:"13–19 abr",      title:"No temáis; estad firmes",                           ref:"Éxodo 14–18"},
-    {w:16, d:"20–26 abr",      title:"Todo lo que Jehová ha dicho, haremos",              ref:"Éxodo 19–20; 24; 31–34"},
-    {w:17, d:"27 abr–3 may",   title:"Que me hagan un santuario",                         ref:"Éxodo 35–40; Levítico 1;4;16;19"},
-    {w:18, d:"4–10 may",       title:"No murmuréis",                                      ref:"Números 11–14; 20–24; 27"},
-    {w:19, d:"11–17 may",      title:"Escoge la vida",                                    ref:"Deuteronomio 6–8; 15; 18; 29–30; 34"},
-    {w:20, d:"18–24 may",      title:"Esfuérzate y sé valiente",                          ref:"Josué 1–8; 23–24"},
-    {w:21, d:"25–31 may",      title:"Jehová levantó un libertador",                      ref:"Jueces 2–4; 6–8; 13–16"},
-    {w:22, d:"1–7 jun",        title:"No me ruegues que te deje",                         ref:"Rut; 1 Samuel 1–7"},
-    {w:23, d:"8–14 jun",       title:"Jehová mira el corazón",                            ref:"1 Samuel 8–10; 13; 15–16"},
-    {w:24, d:"15–21 jun",      title:"He hallado a David mi siervo",                      ref:"1 Samuel 17–18; 24–26; 2 Samuel 5–7"},
-    {w:25, d:"22–28 jun",      title:"Crea en mí un corazón limpio",                      ref:"2 Samuel 11–12; 1 Reyes 3; 6–9; 11"},
-    {w:26, d:"29 jun–5 jul",   title:"Solo yo he quedado",                                ref:"1 Reyes 12–13; 17–22"},
-    {w:27, d:"6–12 jul",       title:"Eliseo lo vio y clamó",                             ref:"2 Reyes 2–7"},
-    {w:28, d:"13–19 jul",      title:"Prepara tu corazón a Jehová",                       ref:"2 Reyes 16–25"},
-    {w:29, d:"20–26 jul",      title:"Buscad a Jehová y su fortaleza",                    ref:"2 Crónicas 14–20; 26; 30"},
-    {w:30, d:"27 jul–2 ago",   title:"Fortalecieron sus manos para la buena obra",        ref:"Esdras 1; 3–7; Nehemías 2; 4–6; 8"},
-    {w:31, d:"3–9 ago",        title:"Para esta hora",                                    ref:"Ester"},
-    {w:32, d:"10–16 ago",      title:"Yo sé que mi Redentor vive",                        ref:"Job 1–3; 12–14; 19; 21–24; 38–40; 42"},
-    {w:33, d:"17–23 ago",      title:"Jehová es mi pastor",                               ref:"Salmos 1–2; 8; 19–33; 40; 46"},
-    {w:34, d:"24–30 ago",      title:"Oh alabad a Jehová",                                ref:"Salmos 49–51; 61–66; 69–72; 77–78; 85–86"},
-    {w:35, d:"31 ago–6 sep",   title:"Cantando y regocijándose",                          ref:"Salmos 102–103; 110; 116–119; 127–128; 135–139; 146–150"},
-    {w:36, d:"7–13 sep",       title:"Primero busca entender",                            ref:"Proverbios 1–4; 15–16; 22; 31; Eclesiastés 1–3; 11–12"},
-    {w:37, d:"14–20 sep",      title:"La palabra de Jehová vino a mí",                    ref:"Isaías 1–12"},
-    {w:38, d:"21–27 sep",      title:"Levanta tus ojos",                                  ref:"Isaías 13–14; 22; 24–30; 35"},
-    {w:39, d:"28 sep–4 oct",   title:"Tu Hacedor es tu esposo",                           ref:"Isaías 40–49"},
-    {w:40, d:"5–11 oct",       title:"Toda rodilla se doblará",                           ref:"Isaías 50–57"},
-    {w:41, d:"12–18 oct",      title:"Los reuniré",                                       ref:"Isaías 58–66"},
-    {w:42, d:"19–25 oct",      title:"La palabra de Jehová vino a mí",                    ref:"Jeremías 1–3; 7; 16–18; 20"},
-    {w:43, d:"26 oct–1 nov",   title:"Escribiré mi ley en su corazón",                    ref:"Jeremías 31–33; 36–38; Lamentaciones 1; 3"},
-    {w:44, d:"2–8 nov",        title:"Pondré mi Espíritu en vosotros",                    ref:"Ezequiel 1–3; 33–34; 36–37; 47"},
-    {w:45, d:"9–15 nov",       title:"Estos hombres sirven a Dios",                       ref:"Daniel 1–7"},
-    {w:46, d:"16–22 nov",      title:"Te desposaré conmigo",                              ref:"Oseas 1–6; 10–14; Joel"},
-    {w:47, d:"23–29 nov",      title:"El día de Jehová está cerca",                       ref:"Amós; Abdías; Jonás"},
-    {w:48, d:"30 nov–6 dic",   title:"¿Qué pide Jehová de ti?",                          ref:"Miqueas; Nahúm; Habacuc; Sofonías"},
-    {w:49, d:"7–13 dic",       title:"Yo seré su Dios",                                   ref:"Hageo 1–2; Zacarías 1–4; 7–14"},
-    {w:50, d:"14–20 dic",      title:"Nacerá el Sol de justicia",                         ref:"Malaquías"},
-    {w:51, d:"21–27 dic",      title:"Navidad",                                           ref:"Lucas 1–2; Mateo 1–2"},
+    {w:1,  d:"29 dic–4 ene",   title:"Introducción al Antiguo Testamento",              ref:"Introducción"},
+    {w:2,  d:"5–11 ene",       title:"Esta es mi obra y mi gloria",                     ref:"Moisés 1; Abraham 3"},
+    {w:3,  d:"12–18 ene",      title:"En el principio creó Dios los cielos y la tierra",ref:"Génesis 1–2; Moisés 2–3; Abraham 4–5"},
+    {w:4,  d:"19–25 ene",      title:"La Caída de Adán y Eva",                          ref:"Génesis 3–4; Moisés 4–5"},
+    {w:5,  d:"26 ene–1 feb",   title:"Y conoció Adán a su mujer",                       ref:"Génesis 5; Moisés 6"},
+    {w:6,  d:"2–8 feb",        title:"Enoc anduvo con Dios",                            ref:"Moisés 7"},
+    {w:7,  d:"9–15 feb",       title:"Noé halló gracia ante los ojos de Jehová",        ref:"Génesis 6–11; Moisés 8"},
+    {w:8,  d:"16–22 feb",      title:"Te haré una nación grande",                       ref:"Génesis 12–17; Abraham 1–2"},
+    {w:9,  d:"23 feb–1 mar",   title:"¿Hay para Dios alguna cosa difícil?",             ref:"Génesis 18–23"},
+    {w:10, d:"2–8 mar",        title:"Dios proveerá para sí el cordero",                ref:"Génesis 24–33"},
+    {w:11, d:"9–15 mar",       title:"El Señor estaba con José",                        ref:"Génesis 37–41"},
+    {w:12, d:"16–22 mar",      title:"Vosotros sois mis hermanos",                      ref:"Génesis 42–50"},
+    {w:13, d:"23–29 mar",      title:"Ven, pues, y te enviaré",                         ref:"Éxodo 1–6"},
+    {w:14, d:"30 mar–5 abr",   title:"Pascua: Él destruirá a la muerte para siempre",   ref:"Pascua"},
+    {w:15, d:"6–12 abr",       title:"Acuérdate de este día en que saliste de Egipto",  ref:"Éxodo 7–13"},
+    {w:16, d:"13–19 abr",      title:"Estad firmes y ved la salvación de Jehová",       ref:"Éxodo 14–18"},
+    {w:17, d:"20–26 abr",      title:"Todo lo que Jehová ha dicho, haremos",            ref:"Éxodo 19–20; 24; 31–34"},
+    {w:18, d:"27 abr–3 may",   title:"Que me hagan un santuario",                       ref:"Éxodo 35–40; Levítico 1; 4; 16; 19"},
+    {w:19, d:"4–10 may",       title:"No murmuréis",                                    ref:"Números 11–14; 20–24; 27"},
+    {w:20, d:"11–17 may",      title:"Escoge la vida",                                  ref:"Deuteronomio 6–8; 15; 18; 29–30; 34"},
+    {w:21, d:"18–24 may",      title:"Esfuérzate y sé valiente",                        ref:"Josué 1–8; 23–24"},
+    {w:22, d:"25–31 may",      title:"Jehová levantó un libertador",                    ref:"Jueces 2–4; 6–8; 13–16"},
+    {w:23, d:"1–7 jun",        title:"No me ruegues que te deje",                       ref:"Rut; 1 Samuel 1–7"},
+    {w:24, d:"8–14 jun",       title:"Jehová mira el corazón",                          ref:"1 Samuel 8–10; 13; 15–16"},
+    {w:25, d:"15–21 jun",      title:"He hallado a David mi siervo",                    ref:"1 Samuel 17–18; 24–26; 2 Samuel 5–7"},
+    {w:26, d:"22–28 jun",      title:"Crea en mí un corazón limpio",                   ref:"2 Samuel 11–12; 1 Reyes 3; 6–9; 11"},
+    {w:27, d:"29 jun–5 jul",   title:"Solo yo he quedado",                              ref:"1 Reyes 12–13; 17–22"},
+    {w:28, d:"6–12 jul",       title:"Eliseo lo vio y clamó",                           ref:"2 Reyes 2–7"},
+    {w:29, d:"13–19 jul",      title:"Prepara tu corazón a Jehová",                     ref:"2 Reyes 16–25"},
+    {w:30, d:"20–26 jul",      title:"Buscad a Jehová y su fortaleza",                  ref:"2 Crónicas 14–20; 26; 30"},
+    {w:31, d:"27 jul–2 ago",   title:"Fortalecieron sus manos para la buena obra",      ref:"Esdras 1; 3–7; Nehemías 2; 4–6; 8"},
+    {w:32, d:"3–9 ago",        title:"Para esta hora",                                  ref:"Ester"},
+    {w:33, d:"10–16 ago",      title:"Yo sé que mi Redentor vive",                      ref:"Job 1–3; 12–14; 19; 21–24; 38–40; 42"},
+    {w:34, d:"17–23 ago",      title:"Jehová es mi pastor",                             ref:"Salmos 1–2; 8; 19–33; 40; 46"},
+    {w:35, d:"24–30 ago",      title:"Oh alabad a Jehová",                              ref:"Salmos 49–51; 61–66; 69–72; 77–78; 85–86"},
+    {w:36, d:"31 ago–6 sep",   title:"Cantando y regocijándose",                        ref:"Salmos 102–103; 110; 116–119; 127–128; 135–139; 146–150"},
+    {w:37, d:"7–13 sep",       title:"Primero busca entender",                          ref:"Proverbios 1–4; 15–16; 22; 31; Eclesiastés 1–3; 11–12"},
+    {w:38, d:"14–20 sep",      title:"La palabra de Jehová vino a mí",                  ref:"Isaías 1–12"},
+    {w:39, d:"21–27 sep",      title:"Levanta tus ojos",                                ref:"Isaías 13–14; 22; 24–30; 35"},
+    {w:40, d:"28 sep–4 oct",   title:"Tu Hacedor es tu esposo",                         ref:"Isaías 40–49"},
+    {w:41, d:"5–11 oct",       title:"Toda rodilla se doblará",                         ref:"Isaías 50–57"},
+    {w:42, d:"12–18 oct",      title:"Los reuniré",                                     ref:"Isaías 58–66"},
+    {w:43, d:"19–25 oct",      title:"La palabra de Jehová vino a mí",                  ref:"Jeremías 1–3; 7; 16–18; 20"},
+    {w:44, d:"26 oct–1 nov",   title:"Escribiré mi ley en su corazón",                  ref:"Jeremías 31–33; 36–38; Lamentaciones 1; 3"},
+    {w:45, d:"2–8 nov",        title:"Pondré mi Espíritu en vosotros",                  ref:"Ezequiel 1–3; 33–34; 36–37; 47"},
+    {w:46, d:"9–15 nov",       title:"Estos hombres sirven a Dios",                     ref:"Daniel 1–7"},
+    {w:47, d:"16–22 nov",      title:"Te desposaré conmigo",                            ref:"Oseas 1–6; 10–14; Joel"},
+    {w:48, d:"23–29 nov",      title:"El día de Jehová está cerca",                     ref:"Amós; Abdías; Jonás"},
+    {w:49, d:"30 nov–6 dic",   title:"¿Qué pide Jehová de ti?",                        ref:"Miqueas; Nahúm; Habacuc; Sofonías"},
+    {w:50, d:"7–13 dic",       title:"Yo seré su Dios",                                 ref:"Hageo 1–2; Zacarías 1–4; 7–14"},
+    {w:51, d:"14–20 dic",      title:"Nacerá el Sol de justicia",                       ref:"Malaquías"},
+    {w:52, d:"21–27 dic",      title:"Navidad",                                         ref:"Navidad"},
   ]
 };
 
@@ -671,6 +674,30 @@ const LESSONS = {
 const QB = {
 en: {
 12: [
+  {q:"What did Pharaoh command to stop Israel's population growth?",options:["A) Limit their food supply","B) Force them to work harder","C) Kill every newborn Hebrew son","D) Scatter them among the Egyptians"],answer:"C",explanation:"Pharaoh commanded that every son born to the Hebrews be cast into the river, while daughters would be allowed to live.",ref:"Exodus 1:22"},
+  {q:"Moses's mother hid him for three months, then placed him in what?",options:["A) A cave near the Nile","B) An ark of bulrushes among the reeds","C) A basket left at the city gate","D) A tent in the wilderness"],answer:"B",explanation:"She made an ark of bulrushes, daubed it with pitch and slime, and laid Moses inside among the flags by the river's edge.",ref:"Exodus 2:3"},
+  {q:"Who discovered the baby Moses in the river?",options:["A) A Hebrew midwife","B) Pharaoh's wife","C) Pharaoh's daughter","D) An Egyptian merchant woman"],answer:"C",explanation:"Pharaoh's daughter came to wash herself at the river, saw the ark among the reeds, and sent her maid to fetch it.",ref:"Exodus 2:5"},
+  {q:"Moses fled Egypt after killing an Egyptian. Where did he go?",options:["A) Canaan","B) Midian","C) Sinai","D) Arabia"],answer:"B",explanation:"Moses fled to the land of Midian after Pharaoh heard what he had done and sought to kill him.",ref:"Exodus 2:15"},
+  {q:"What was Moses doing when God appeared to him in the burning bush?",options:["A) Praying in the wilderness","B) Sleeping under a tree","C) Tending the flock of his father-in-law Jethro","D) Drawing water from a well"],answer:"C",explanation:"Moses was keeping the flock of Jethro his father-in-law on the backside of the desert when the angel of the Lord appeared.",ref:"Exodus 3:1-2"},
+  {q:"What did God say when Moses asked His name?",options:["A) 'I am the God of Abraham'","B) 'I AM THAT I AM'","C) 'I am the Lord thy God'","D) 'Call me the Eternal Father'"],answer:"B",explanation:"God said 'I AM THAT I AM' and instructed Moses to tell Israel that 'I AM hath sent me unto you.'",ref:"Exodus 3:14"},
+  {q:"What miracle did God show Moses at the burning bush to prove His power?",options:["A) Water turning to blood","B) A staff that became a serpent, and a hand turned leprous then healed","C) Fire from the sky","D) A voice from heaven audible to all"],answer:"B",explanation:"God had Moses cast down his rod (it became a serpent) and put his hand in his bosom (it became leprous, then was restored) as signs for Israel.",ref:"Exodus 4:2-7"},
+  {q:"What reason did Moses give for not wanting to speak to Pharaoh?",options:["A) He feared being killed","B) He did not know Egyptian","C) He was slow of speech and of a slow tongue","D) He was too old"],answer:"C",explanation:"Moses told God he was not eloquent and was slow of speech and tongue — and God reminded him that He made man's mouth.",ref:"Exodus 4:10"},
+  {q:"The Hebrew midwives Shiphrah and Puah refused Pharaoh's command to kill Hebrew boys. What did they tell Pharaoh?",options:["A) That they feared God more than any king","B) That Hebrew women delivered before midwives arrived","C) That God had forbidden them to harm children","D) That they had been bribed by the Hebrew elders"],answer:"B",explanation:"The midwives feared God and did not kill the boys; when confronted, they told Pharaoh the Hebrew women delivered before they arrived.",ref:"Exodus 1:17-19"},
+  {q:"When Moses and Aaron first told Pharaoh 'Let my people go,' what did Pharaoh do?",options:["A) He asked for time to consider","B) He consulted his priests","C) He refused and increased Israel's workload — requiring bricks without providing straw","D) He expelled Moses from Egypt"],answer:"C",explanation:"Pharaoh called Moses and Aaron troublemakers and commanded that Israel gather their own straw while maintaining the same brick quota.",ref:"Exodus 5:7-9"}
+],
+13: [
+  {q:"The Easter lesson title is 'He Will Swallow Up Death in Victory.' This phrase comes from which Old Testament prophet?",options:["A) Jeremiah","B) Ezekiel","C) Isaiah","D) Micah"],answer:"C",explanation:"Isaiah 25:8 declares 'He will swallow up death in victory; and the Lord God will wipe away tears from off all faces.'",ref:"Isaiah 25:8"},
+  {q:"Isaiah prophesied of the Atonement in chapter 53. Which phrase describes Christ taking our sins upon Himself?",options:["A) 'He bore our griefs and carried our sorrows'","B) 'He ascended above the clouds'","C) 'He ruled with a rod of iron'","D) 'He gathered the nations unto Himself'"],answer:"A",explanation:"Isaiah 53:4 says 'Surely he hath borne our griefs, and carried our sorrows,' pointing to Christ's atoning suffering.",ref:"Isaiah 53:4"},
+  {q:"The Resurrection of Jesus Christ fulfills which promise made through Old Testament prophets about death?",options:["A) That the righteous would never die","B) That death would be swallowed up in victory and have no permanent power","C) That only prophets would be resurrected","D) That the earth would be destroyed at the Resurrection"],answer:"B",explanation:"Isaiah 25:8 and Hosea 13:14 both contain promises that God would destroy death's power — fulfilled in Christ's Resurrection.",ref:"Isaiah 25:8; Hosea 13:14"},
+  {q:"Job expressed hope in the resurrection when he declared what?",options:["A) 'I shall see God in my flesh after my skin is destroyed'","B) 'My bones will return to the dust'","C) 'God will remember me after death'","D) 'My spirit will ascend to heaven'"],answer:"A",explanation:"Job 19:26 — 'And though after my skin worms destroy this body, yet in my flesh shall I see God' — is one of the clearest Old Testament resurrection testimonies.",ref:"Job 19:26"},
+  {q:"On the first Easter morning, the tomb was found empty. Jesus appeared first to whom, according to the Gospels?",options:["A) Peter and John","B) The eleven Apostles","C) Mary Magdalene","D) His mother Mary"],answer:"C",explanation:"John 20:14-16 records that Jesus first appeared to Mary Magdalene outside the tomb, calling her by name.",ref:"John 20:14-16"},
+  {q:"Jesus's resurrection is central to the gospel. Paul wrote that without it, our faith would be what?",options:["A) Incomplete","B) Vain — empty and useless","C) Still sufficient for salvation","D) Based on works alone"],answer:"B",explanation:"1 Corinthians 15:17 — 'If Christ be not raised, your faith is vain; ye are yet in your sins.'",ref:"1 Corinthians 15:17"},
+  {q:"The Passover lamb in Exodus foreshadowed Jesus Christ. What did the lamb's blood on the doorpost symbolize?",options:["A) Israel's obedience to Moses","B) The blood of Christ protecting the faithful from spiritual death","C) Egypt's punishment for slavery","D) The covenant between Moses and Pharaoh"],answer:"B",explanation:"The Passover lamb — unblemished, its blood protecting Israel from the destroyer — was a type of Christ, whose Atonement protects us from spiritual death.",ref:"Exodus 12:7; 1 Corinthians 5:7"},
+  {q:"Ezekiel 37 uses dry bones coming to life as a symbol of restoration. How does this connect to the Resurrection?",options:["A) It predicts that bones will literally reassemble at the last day","B) It uses the imagery of death giving way to new life — a symbol of resurrection power","C) It describes only Israel's national restoration with no connection to resurrection","D) It predicts that prophets alone will be resurrected"],answer:"B",explanation:"The valley of dry bones vision powerfully depicts God's power to bring life from death — the same power demonstrated in Christ's literal Resurrection.",ref:"Ezekiel 37:1-14"},
+  {q:"Isaiah 53:10-11 says that after the Savior's suffering He would 'see his seed' and 'prolong his days.' What does this suggest?",options:["A) Isaiah predicted Christ would have mortal children","B) Isaiah foresaw that Christ would survive His suffering and live again — a resurrection prophecy","C) Isaiah was speaking of Isaiah's own posterity","D) This refers only to Christ's mortal ministry"],answer:"B",explanation:"The Servant who 'pours out his soul unto death' would afterward 'see of the travail of his soul and be satisfied' — resurrection implied in the very structure of the prophecy.",ref:"Isaiah 53:10-11"},
+  {q:"Because of the Resurrection, what did Paul say would happen to the bodies of the righteous dead?",options:["A) They would become spiritual and invisible","B) They would be reunited with their spirits in a glorious resurrection","C) They would remain in the grave until the Millennium","D) They would be judged immediately at death"],answer:"B",explanation:"1 Corinthians 15:42-44 teaches that the body is sown in corruption and raised in incorruption — a glorious resurrection for all.",ref:"1 Corinthians 15:42-44"}
+],
+14: [
   {q:"What was the first plague God sent upon Egypt?",options:["A) Frogs","B) Darkness","C) Water turning to blood","D) Locusts"],answer:"C",explanation:"Aaron struck the Nile and it turned to blood, the first of the ten plagues.",ref:"Exodus 7:20"},
   {q:"Which plague finally convinced Pharaoh to let Israel go?",options:["A) Hail","B) Death of the firstborn","C) Locusts","D) Boils"],answer:"B",explanation:"The death of every Egyptian firstborn, including Pharaoh's son, broke his resistance.",ref:"Exodus 12:29–30"},
   {q:"What did the Israelites put on their doorposts so the destroyer would pass over?",options:["A) Olive oil","B) Cedar wood","C) Blood of a lamb","D) Salt water"],answer:"C",explanation:"The blood of a spotless lamb marked the doorposts of faithful Israelite homes.",ref:"Exodus 12:7"},
@@ -682,7 +709,7 @@ en: {
   {q:"The three days of darkness in Egypt was the ninth plague. Which group was NOT affected?",options:["A) Egyptian priests","B) Egyptian children","C) Children of Israel","D) Egyptian merchants"],answer:"C",explanation:"The Israelites had light in their dwellings while Egypt was in thick darkness.",ref:"Exodus 10:23"},
   {q:"What feast did God institute to commemorate the Passover for all generations?",options:["A) Feast of Tabernacles","B) Feast of Weeks","C) Feast of the Passover","D) Feast of First Fruits"],answer:"C",explanation:"The Passover was to be kept as an ordinance forever throughout Israel's generations.",ref:"Exodus 12:14"}
 ],
-13: [
+15: [
   {q:"How did God part the Red Sea for Moses?",options:["A) Moses struck the water with a stone","B) Moses stretched his rod over the sea","C) Moses prayed and the wind parted it","D) An angel pushed the waters aside"],answer:"B",explanation:"God told Moses to stretch his hand and rod over the sea, and a strong east wind divided the waters.",ref:"Exodus 14:16, 21"},
   {q:"What happened to the Egyptian army that pursued Israel into the Red Sea?",options:["A) They turned back at the shore","B) They were blinded","C) The waters returned and drowned them","D) They surrendered"],answer:"C",explanation:"As Israel crossed, Moses stretched his hand over the sea and the waters returned, covering the Egyptian chariots and horsemen.",ref:"Exodus 14:27–28"},
   {q:"Miriam led the women of Israel in a song of praise after the Red Sea crossing. What instrument did she use?",options:["A) Harp","B) Timbrel (tambourine)","C) Trumpet","D) Lyre"],answer:"B",explanation:"Miriam the prophetess took a timbrel and led the women in singing and dancing before the Lord.",ref:"Exodus 15:20"},
@@ -694,7 +721,7 @@ en: {
   {q:"Jethro, Moses's father-in-law, gave Moses wise counsel about what?",options:["A) How to build the tabernacle","B) How to divide leadership and delegate judging the people","C) How to fight Amalek","D) How to collect offerings"],answer:"B",explanation:"Jethro saw Moses judging alone and advised him to appoint capable men as rulers over thousands, hundreds, fifties, and tens.",ref:"Exodus 18:17–22"},
   {q:"What did God feed Israel when they craved meat in the wilderness?",options:["A) Manna with meat flavor","B) Quail","C) Wild goats","D) Fish from the sea"],answer:"B",explanation:"The Lord sent quail in the evening that covered the camp, providing meat for Israel.",ref:"Exodus 16:13"}
 ],
-14: [
+16: [
   {q:"What did God say Israel would be if they kept His covenant — His kingdom of what?",options:["A) Warriors and conquerors","B) Priests and a holy nation","C) Scholars and teachers","D) Shepherds and farmers"],answer:"B",explanation:"God told Israel they would be unto Him a kingdom of priests and a holy nation.",ref:"Exodus 19:6"},
   {q:"How long did Moses fast on Mount Sinai when he received the law?",options:["A) Seven days","B) Twenty days","C) Forty days and forty nights","D) Three days"],answer:"C",explanation:"Moses was with the Lord forty days and forty nights, neither eating bread nor drinking water.",ref:"Exodus 34:28"},
   {q:"What was the first of the Ten Commandments?",options:["A) Remember the Sabbath","B) Honor your father and mother","C) You shall have no other gods before Me","D) You shall not murder"],answer:"C",explanation:"The first commandment establishes that Israel shall have no other gods before the Lord.",ref:"Exodus 20:3"},
@@ -706,7 +733,7 @@ en: {
   {q:"Why did Aaron say he cast the gold into the fire when building the calf?",options:["A) The people forced him","B) He followed God's command","C) He said the calf came out by itself","D) He was testing the people's faith"],answer:"C",explanation:"Aaron lamely claimed he threw in the gold and 'there came out this calf,' deflecting responsibility.",ref:"Exodus 32:24"},
   {q:"What covenant did God renew with Moses after the golden calf incident?",options:["A) The Abrahamic covenant only","B) The Noahic covenant","C) The Mosaic covenant, with new stone tablets","D) A new covenant with Aaron"],answer:"C",explanation:"God told Moses to hew two new tablets and He would write the commandments again, renewing the covenant.",ref:"Exodus 34:1"}
 ],
-15: [
+17: [
   {q:"What was the large curtain in the tabernacle that separated the Holy Place from the Most Holy Place called?",options:["A) The linen screen","B) The veil","C) The canopy","D) The curtain of meeting"],answer:"B",explanation:"The veil of blue, purple, and scarlet divided the Holy Place from the Most Holy Place where the ark rested.",ref:"Exodus 26:33"},
   {q:"What rested on top of the Ark of the Covenant?",options:["A) The golden lampstand","B) The mercy seat","C) The bronze laver","D) The altar of incense"],answer:"B",explanation:"The mercy seat, with its two golden cherubim, covered the ark — the place where God said He would meet with Israel.",ref:"Exodus 25:17–22"},
   {q:"What offering in Leviticus was required specifically for unintentional sins?",options:["A) Peace offering","B) Trespass offering","C) Sin offering","D) Burnt offering"],answer:"C",explanation:"The sin offering was prescribed for unintentional violations of God's commandments.",ref:"Leviticus 4:2"},
@@ -718,7 +745,7 @@ en: {
   {q:"How did God guide Israel through the wilderness after the tabernacle was built?",options:["A) A pillar of fire at night and a cloud by day over the tabernacle","B) An angel walking before them","C) The Urim and Thummim","D) Moses's staff"],answer:"A",explanation:"The cloud of the Lord covered the tabernacle by day and fire was on it by night, guiding Israel's journeys.",ref:"Exodus 40:38"},
   {q:"Which tribe of Israel was set apart to serve as priests and care for the tabernacle?",options:["A) Judah","B) Benjamin","C) Levi","D) Ephraim"],answer:"C",explanation:"The tribe of Levi was consecrated to the service of the tabernacle in place of the firstborn of all Israel.",ref:"Numbers 3:12"}
 ],
-16: [
+18: [
   {q:"What did the twelve spies bring back from Canaan to show the land's abundance?",options:["A) A basket of figs","B) A cluster of grapes so large it required two men to carry","C) A jar of honey","D) A sheaf of wheat"],answer:"B",explanation:"From the valley of Eshcol they cut a branch with one cluster of grapes carried on a pole between two men.",ref:"Numbers 13:23"},
   {q:"Out of the twelve spies, who gave a faithful report and urged Israel to enter Canaan?",options:["A) Moses and Aaron","B) Caleb and Joshua","C) Caleb alone","D) Joshua and Phinehas"],answer:"B",explanation:"Caleb and Joshua were the only two spies who believed God would help them conquer the land.",ref:"Numbers 13:30; 14:6–8"},
   {q:"Because Israel refused to enter Canaan, how long did God say they would wander in the wilderness?",options:["A) Seven years","B) Twenty years","C) Forty years","D) A lifetime"],answer:"C",explanation:"One year for each of the forty days of spying — forty years — until that faithless generation died out.",ref:"Numbers 14:34"},
@@ -730,7 +757,7 @@ en: {
   {q:"What was the sin of Israel that caused a plague killing 24,000 people near Moab?",options:["A) Breaking the Sabbath","B) Worshipping Baal of Peor and sexual immorality with Moabite women","C) Refusing to offer sacrifices","D) Murmuring against Moses again"],answer:"B",explanation:"Israel joined themselves to Baal of Peor through Moabite women, and God's anger burned against them.",ref:"Numbers 25:1–9"},
   {q:"Phinehas stopped the plague by doing what?",options:["A) Praying on the altar","B) Driving out the Moabite women","C) Thrusting a spear through an Israelite man and a Midianite woman","D) Burning the idols"],answer:"C",explanation:"Phinehas's zealous act turned God's wrath away and stayed the plague.",ref:"Numbers 25:7–8"}
 ],
-17: [
+19: [
   {q:"What is the Hebrew word Moses recites at the heart of Deuteronomy 6, meaning 'Hear, O Israel'?",options:["A) Hallelujah","B) Shema","C) Hosanna","D) Selah"],answer:"B",explanation:"'Shema Yisrael' — 'Hear, O Israel: The Lord our God is one Lord' — is the central confession of Israelite faith.",ref:"Deuteronomy 6:4"},
   {q:"Moses told Israel to love God with all their heart, soul, and what else?",options:["A) Strength","B) Mind","C) Wealth","D) Days"],answer:"A",explanation:"'Thou shalt love the Lord thy God with all thine heart, and with all thy soul, and with all thy might.'",ref:"Deuteronomy 6:5"},
   {q:"Moses warned Israel that when they became prosperous in Canaan they should beware of what?",options:["A) Foreign armies","B) Forgetting God who brought them out of Egypt","C) Mixing with other nations","D) Neglecting the priests"],answer:"B",explanation:"Moses feared that full bellies and fine houses would make Israel forget the Lord their God.",ref:"Deuteronomy 8:11–14"},
@@ -742,7 +769,7 @@ en: {
   {q:"Moses recited a song to Israel near the end of his life. What was its purpose?",options:["A) To celebrate their victory over Midian","B) To serve as a witness against Israel if they turned from God","C) To praise God for the manna","D) To teach the priesthood laws"],answer:"B",explanation:"God told Moses the song would be a witness against Israel when they forsook Him in the promised land.",ref:"Deuteronomy 31:19–21"},
   {q:"Who was chosen to lead Israel after Moses?",options:["A) Caleb","B) Phinehas","C) Aaron's son Eleazar","D) Joshua"],answer:"D",explanation:"God commissioned Joshua before all Israel to lead them into the promised land.",ref:"Deuteronomy 31:7–8"}
 ],
-18: [
+20: [
   {q:"What promise did God give Joshua at the start of his leadership?",options:["A) He would never face any enemy","B) 'I will not fail thee nor forsake thee — be strong and courageous'","C) He would be wiser than Moses","D) All of Canaan would surrender without battle"],answer:"B",explanation:"God repeated the command to be strong and of good courage, promising His constant presence with Joshua.",ref:"Joshua 1:5–9"},
   {q:"Who hid the two spies Joshua sent to Jericho?",options:["A) A Levite family","B) An old innkeeper","C) Rahab the harlot","D) A sympathetic Canaanite soldier"],answer:"C",explanation:"Rahab hid the spies on her roof under stalks of flax and helped them escape.",ref:"Joshua 2:4, 6"},
   {q:"What signal did Rahab put in her window so Israel would spare her household?",options:["A) A white cloth","B) A scarlet cord","C) An olive branch","D) A burning lamp"],answer:"B",explanation:"The spies told Rahab to bind a line of scarlet thread in her window as a sign of protection.",ref:"Joshua 2:18"},
@@ -754,7 +781,7 @@ en: {
   {q:"What did Joshua set up at Gilgal after crossing the Jordan?",options:["A) An altar of burnt offerings","B) A monument of twelve stones from the riverbed","C) A tabernacle for the ark","D) A memorial wall"],answer:"B",explanation:"Twelve men, one from each tribe, each took a stone from the Jordan's bed, and Joshua set them up as a memorial at Gilgal.",ref:"Joshua 4:20"},
   {q:"What happened to Joshua's commander of the Lord's army when Joshua asked him whose side he was on?",options:["A) He said he was on Israel's side","B) He said he was on Jericho's side","C) He said he was neither — he was captain of the Lord's host","D) He disappeared without answering"],answer:"C",explanation:"The heavenly commander said he was captain of the Lord's host — he served God, not a human faction.",ref:"Joshua 5:14"}
 ],
-19: [
+21: [
   {q:"What cycle does the book of Judges repeatedly show?",options:["A) Prosperity → war → peace","B) Faithfulness → blessing → apostasy → oppression → repentance → deliverance","C) Apostasy → exile → return","D) War → treaty → prosperity"],answer:"B",explanation:"Judges documents a repeated cycle: Israel sins, God allows oppression, Israel cries out, God raises a deliverer.",ref:"Judges 2:16–19"},
   {q:"Deborah was unique among the judges because she was also what?",options:["A) A queen","B) A high priestess","C) A prophetess","D) A military general only"],answer:"C",explanation:"Deborah was a prophetess who judged Israel — she heard cases under the palm tree of Deborah.",ref:"Judges 4:4"},
   {q:"Who killed the Canaanite commander Sisera after Deborah's victory?",options:["A) Barak","B) Deborah","C) Jael with a tent peg","D) An unnamed Israelite soldier"],answer:"C",explanation:"Jael drove a tent peg through Sisera's temple while he slept, fulfilling Deborah's prophecy.",ref:"Judges 4:21"},
@@ -766,7 +793,7 @@ en: {
   {q:"What tribe descended into chaos and civil war partly because of the crime at Gibeah?",options:["A) Dan","B) Manasseh","C) Benjamin","D) Simeon"],answer:"C",explanation:"The Gibeah atrocity was committed by Benjaminites, leading to a devastating civil war against the tribe of Benjamin.",ref:"Judges 20:12–14"},
   {q:"Israel's repeated trouble in Judges is summarized in one phrase: 'Every man did...'",options:["A) '...what the elders commanded'","B) '...what was right in his own eyes'","C) '...what the foreign nations taught'","D) '...what the priests permitted'"],answer:"B",explanation:"The book ends twice with the verdict that everyone did what was right in their own eyes — the consequence of having no godly king.",ref:"Judges 21:25"}
 ],
-20: [
+22: [
   {q:"Ruth was from which nation?",options:["A) Ammon","B) Edom","C) Moab","D) Philistia"],answer:"C",explanation:"Ruth is identified throughout the book as Ruth the Moabitess.",ref:"Ruth 1:4"},
   {q:"What did Ruth famously declare to Naomi after Orpah turned back?",options:["A) 'I will stay until you are safe, then return home'","B) 'Whither thou goest I will go; thy people shall be my people; thy God my God'","C) 'I have no reason to leave you, Naomi'","D) 'God has told me to follow you to Israel'"],answer:"B",explanation:"Ruth's declaration of loyalty to Naomi is one of the most celebrated expressions of covenant love in the Old Testament.",ref:"Ruth 1:16"},
   {q:"What was the practice of gleaning that Ruth participated in?",options:["A) Purchasing grain at market price","B) Collecting grain left behind by harvesters in the fields","C) Borrowing grain to be repaid at harvest","D) Working as a hired field hand"],answer:"B",explanation:"The law of Moses permitted the poor and the stranger to gather what the harvesters left behind.",ref:"Ruth 2:2; Leviticus 19:9–10"},
@@ -778,7 +805,7 @@ en: {
   {q:"What son was born to Boaz and Ruth, bringing great joy to Naomi?",options:["A) Jesse","B) Obed","C) Salmon","D) Boaz the younger"],answer:"B",explanation:"They named the child Obed; he became the father of Jesse and grandfather of David.",ref:"Ruth 4:17"},
   {q:"The book of Ruth shows that God's covenant extended beyond Israel. Ruth, a Moabite, became an ancestor of whom?",options:["A) The prophet Jeremiah","B) King Solomon","C) King David and ultimately Jesus Christ","D) The high priest Zadok"],answer:"C",explanation:"Ruth is listed in the genealogy leading to David and, through him, to Jesus Christ.",ref:"Ruth 4:17, 22; Matthew 1:5"}
 ],
-21: [
+23: [
   {q:"Hannah's prayer and song in 1 Samuel prefigures whose later prayer?",options:["A) Deborah's","B) Mary's Magnificat","C) David's psalm of praise","D) Solomon's prayer at the temple"],answer:"B",explanation:"Hannah's song of exultation about God lifting the humble closely parallels Mary's Magnificat in Luke 1.",ref:"1 Samuel 2:1–10"},
   {q:"Samuel heard the voice of God calling him in the night at the tabernacle. Who finally recognized it was the Lord?",options:["A) Samuel immediately recognized God's voice","B) His mother Hannah told him","C) Eli the priest, on the third call, told Samuel to answer God","D) An angel appeared to explain"],answer:"C",explanation:"After the third call, Eli perceived the Lord was speaking to the boy and instructed Samuel to answer.",ref:"1 Samuel 3:8–9"},
   {q:"What did Israel demand from Samuel despite God's warning against it?",options:["A) A tabernacle in every city","B) A king like the other nations","C) A standing army","D) A council of priests"],answer:"B",explanation:"Israel insisted on having a king to judge them and lead them in battle like all the nations around them.",ref:"1 Samuel 8:5"},
@@ -790,7 +817,7 @@ en: {
   {q:"Jonathan, Saul's son, made a covenant of friendship with David. Jonathan gave David what as a sign?",options:["A) His father's signet ring","B) His own robe, armor, sword, bow, and girdle","C) Land in Gibeah","D) A portion of the kingdom"],answer:"B",explanation:"Jonathan stripped off his robe, armor, sword, bow, and belt and gave them to David — a profound act of selfless love.",ref:"1 Samuel 18:3–4"},
   {q:"David spared Saul's life twice. What reason did David give for not killing him?",options:["A) He feared Saul's army","B) He loved Saul as a father","C) Saul was the Lord's anointed and David would not stretch his hand against him","D) He was waiting for a better opportunity"],answer:"C",explanation:"David refused to harm Saul because he was the Lord's anointed — even when urged by his men.",ref:"1 Samuel 24:6"}
 ],
-22: [
+24: [
   {q:"David saw Bathsheba bathing from his rooftop. What should be noted about his position at that time?",options:["A) He was too young to be at war","B) It was the time when kings go out to battle — David had stayed behind","C) He was recovering from illness","D) He had already appointed Joab as sole commander"],answer:"B",explanation:"The text pointedly notes that it was the season when kings go to war — David's idleness created opportunity for his sin.",ref:"2 Samuel 11:1"},
   {q:"After David arranged Uriah's death, the prophet Nathan confronted him with a parable about what?",options:["A) A corrupt judge stealing a widow's land","B) A rich man who took the poor man's only beloved ewe lamb","C) A king who taxed his people into poverty","D) A shepherd who abandoned his flock"],answer:"B",explanation:"Nathan's parable about the rich man's theft of the poor man's one ewe lamb exposed David's own sin of taking Uriah's wife.",ref:"2 Samuel 12:1–4"},
   {q:"When David said 'Thou art the man!' was declared by Nathan, how did David respond?",options:["A) He denied the accusation","B) He ordered Nathan arrested","C) He immediately confessed 'I have sinned against the Lord'","D) He wept but did not admit fault"],answer:"C",explanation:"David made an immediate, unequivocal confession — 'I have sinned against the Lord.'",ref:"2 Samuel 12:13"},
@@ -802,7 +829,7 @@ en: {
   {q:"When Nathan told David the sword would never depart from his house, what family tragedy soon followed?",options:["A) His son Solomon was poisoned","B) His son Absalom rebelled and was killed","C) His daughter Michal died childless","D) His son Amnon overthrew him briefly"],answer:"B",explanation:"Absalom rebelled against his father, was defeated, and was killed by Joab — a grief that broke David's heart.",ref:"2 Samuel 18:14–15, 33"},
   {q:"Why was David told he could not build the temple?",options:["A) He lacked the wealth","B) He was too old","C) He was a man of war who had shed much blood","D) God wanted Solomon to have all the honor"],answer:"C",explanation:"God told David that because he had shed much blood and made great wars, his son would build the house.",ref:"1 Chronicles 22:8"}
 ],
-23: [
+25: [
   {q:"When God appeared to Solomon at Gibeon and offered him anything, what did Solomon ask for?",options:["A) Long life and victory over enemies","B) Riches and honor","C) An understanding heart to judge Israel and discern good from evil","D) Power to build the temple"],answer:"C",explanation:"Solomon asked for wisdom — an understanding heart — and God was pleased, granting wisdom and also riches and honor.",ref:"1 Kings 3:5, 9"},
   {q:"The famous judgment of Solomon involved two women both claiming to be the mother of a baby. What did Solomon threaten?",options:["A) To exile both women","B) To divide the living child in two with a sword","C) To let the elders decide","D) To consult the Urim and Thummim"],answer:"B",explanation:"Solomon called for a sword to cut the living child in two — the true mother's love was revealed when she cried out to spare the child.",ref:"1 Kings 3:25"},
   {q:"Solomon's temple took how many years to build?",options:["A) Three years","B) Seven years","C) Ten years","D) Fifteen years"],answer:"B",explanation:"Solomon was seven years building the house of the Lord.",ref:"1 Kings 6:38"},
@@ -814,7 +841,7 @@ en: {
   {q:"What was God's consequence for Solomon's apostasy?",options:["A) The temple would be destroyed in his lifetime","B) The kingdom would be torn from his son's hand — all but one tribe","C) Solomon would lose his wisdom","D) Israel would be conquered by Egypt"],answer:"B",explanation:"God told Solomon that He would rend the kingdom from his son, leaving only one tribe for David's sake.",ref:"1 Kings 11:11–13"},
   {q:"Proverbs 3:5–6 gives what instruction about trusting God?",options:["A) Trust in your own strength and God will guide you","B) Trust in the Lord with all your heart; lean not on your own understanding; acknowledge Him and He will direct your paths","C) Seek wisdom first, then trust God to act","D) Fear the Lord and do not question His ways"],answer:"B",explanation:"'Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.'",ref:"Proverbs 3:5–6"}
 ],
-24: [
+26: [
   {q:"During the famine Elijah caused by his prophecy, God sustained him first by a brook called Cherith. Who brought him food there?",options:["A) Angels","B) Ravens","C) A widow","D) His servant Elisha"],answer:"B",explanation:"God commanded ravens to bring Elijah bread and flesh morning and evening at the brook Cherith.",ref:"1 Kings 17:6"},
   {q:"The widow of Zarephath's oil and meal miraculously did not run out. What had she been about to do when Elijah arrived?",options:["A) Sell her last food at market","B) Make a last meal for herself and her son before they died","C) Travel to Israel to find food","D) Offer her last grain to the Baal priests"],answer:"B",explanation:"She was gathering sticks to make a last meal for herself and her son — they were about to die of famine.",ref:"1 Kings 17:12"},
   {q:"On Mount Carmel, Elijah challenged the 450 prophets of Baal to a contest. What was the test?",options:["A) Whose prayer could bring rain first","B) Whose sacrifice God or Baal would answer with fire from heaven","C) Who could go longer without food","D) Whose god would silence the other"],answer:"B",explanation:"Each side would prepare a bull on an altar; the god who answered by fire would be recognized as the true God.",ref:"1 Kings 18:24"},
@@ -826,7 +853,7 @@ en: {
   {q:"How did Elijah leave the earth at the end of his ministry?",options:["A) He died peacefully in his sleep","B) He was taken up in a whirlwind with a chariot of fire","C) He crossed the Jordan and was never seen again","D) He ascended from Mount Carmel"],answer:"B",explanation:"As Elijah and Elisha walked, a chariot of fire appeared and Elijah went up by a whirlwind into heaven.",ref:"2 Kings 2:11"},
   {q:"Who received the double portion of Elijah's spirit as his successor?",options:["A) Jehu","B) Jonah","C) Elisha","D) Micaiah"],answer:"C",explanation:"Elisha saw Elijah taken up and received his mantle — and the sons of the prophets recognized Elijah's spirit rested on Elisha.",ref:"2 Kings 2:12–15"}
 ],
-25: [
+27: [
   {q:"Elisha's first miracle after receiving Elijah's mantle was to part the Jordan River. What did he use?",options:["A) His staff","B) Elijah's mantle","C) His prayer alone","D) A stone from the riverbed"],answer:"B",explanation:"Elisha took Elijah's mantle, smote the waters, and they parted — confirming his prophetic succession.",ref:"2 Kings 2:14"},
   {q:"Elisha healed the spring at Jericho by throwing what into it?",options:["A) Ashes","B) Oil","C) Salt","D) Cedar wood"],answer:"C",explanation:"Elisha cast salt into the spring and declared the Lord had healed the waters — they have been wholesome ever since.",ref:"2 Kings 2:20–22"},
   {q:"Naaman, commander of Syria's army, had leprosy. What did Elisha tell him to do to be healed?",options:["A) Offer a great sacrifice at the temple","B) Wash seven times in the Jordan River","C) Anoint himself with the oil Elisha provided","D) Fast for seven days"],answer:"B",explanation:"Elisha sent a messenger telling Naaman to wash seven times in the Jordan and he would be clean.",ref:"2 Kings 5:10"},
@@ -838,7 +865,7 @@ en: {
   {q:"Isaiah 9:6 lists titles for the promised child. Which is NOT one of them?",options:["A) Wonderful, Counsellor","B) The Mighty God","C) King of Kings","D) The Everlasting Father"],answer:"C",explanation:"Isaiah 9:6 gives the names Wonderful, Counsellor, Mighty God, Everlasting Father, and Prince of Peace — 'King of Kings' is not among them.",ref:"Isaiah 9:6"},
   {q:"Isaiah 11 describes the Messiah's peaceful kingdom. Which animals does it say will lie together?",options:["A) Lion and ox","B) Wolf and lamb; leopard and kid; lion and calf","C) Bear and sheep; hawk and dove","D) Wolf and sheep; eagle and sparrow"],answer:"B",explanation:"Isaiah's peaceable kingdom vision includes the wolf dwelling with the lamb, the leopard lying with the kid, and the lion eating straw like an ox.",ref:"Isaiah 11:6–7"}
 ],
-26: [
+28: [
   {q:"Isaiah 40:31 promises that those who wait upon the Lord will do what?",options:["A) Receive all their requests","B) Renew their strength and mount up with wings as eagles","C) Inherit the promised land","D) Be given long life"],answer:"B",explanation:"'They that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles.'",ref:"Isaiah 40:31"},
   {q:"Isaiah 40:3 prophesied of one who would 'prepare the way of the Lord in the wilderness.' Who did Jesus say this referred to?",options:["A) Isaiah himself","B) Elijah","C) John the Baptist","D) The Apostles collectively"],answer:"C",explanation:"Jesus and all four Gospel writers identify John the Baptist as the fulfillment of Isaiah's voice in the wilderness.",ref:"Isaiah 40:3; Matthew 3:3"},
   {q:"Isaiah 53 describes the suffering Servant. It says 'he was wounded for our transgressions, he was bruised for our...'",options:["A) '...sins'","B) '...iniquities'","C) '...enemies'","D) '...people'"],answer:"B",explanation:"'He was wounded for our transgressions, he was bruised for our iniquities' — a prophecy of Christ's Atonement.",ref:"Isaiah 53:5"},
@@ -850,7 +877,7 @@ en: {
   {q:"Isaiah 25:8 contains a remarkable promise about death. What does it say?",options:["A) God will shorten the days of mourning","B) He will swallow up death in victory and wipe away tears from all faces","C) The righteous dead will rise on the last day","D) Death will be banished from Israel's borders"],answer:"B",explanation:"'He will swallow up death in victory; and the Lord God will wipe away tears from off all faces.'",ref:"Isaiah 25:8"},
   {q:"Isaiah 35 describes a future restoration. What shall the ransomed of the Lord return with?",options:["A) Livestock and wealth from the nations","B) Everlasting joy upon their heads; sorrow and sighing shall flee away","C) The scrolls of the law","D) Singing and offerings for the temple"],answer:"B",explanation:"'The ransomed of the Lord shall return...with everlasting joy upon their heads; they shall obtain joy and gladness, and sorrow and sighing shall flee away.'",ref:"Isaiah 35:10"}
 ],
-27: [
+29: [
   {q:"Isaiah 58:6 defines the 'fast that God has chosen.' Which of the following is included?",options:["A) Going without food for three days","B) Loosing the bands of wickedness, letting the oppressed go free, and breaking every yoke","C) Wearing sackcloth and sitting in ashes","D) Offering double the required sacrifices"],answer:"B",explanation:"God's chosen fast is justice and liberation for the oppressed — not mere ritual abstinence.",ref:"Isaiah 58:6"},
   {q:"Isaiah 61:1 describes the mission of God's anointed. Jesus read this passage in the synagogue at Nazareth and declared it was what?",options:["A) A prophecy yet to be fulfilled","B) A description of Isaiah's own ministry","C) Fulfilled that day in their ears","D) Applicable only to the Jews' return from Babylon"],answer:"C",explanation:"After reading Isaiah 61:1, Jesus said 'This day is this scripture fulfilled in your ears.'",ref:"Isaiah 61:1; Luke 4:21"},
   {q:"Micah 5:2 contains a prophecy about where the Messiah would be born. What city does it name?",options:["A) Jerusalem","B) Nazareth","C) Bethlehem Ephratah","D) Hebron"],answer:"C",explanation:"'But thou, Bethlehem Ephratah...out of thee shall he come forth unto me that is to be ruler in Israel.'",ref:"Micah 5:2"},
@@ -862,7 +889,7 @@ en: {
   {q:"Isaiah 60:1 contains a famous call. What does it say?",options:["A) 'Come, let us reason together'","B) 'Seek the Lord while he may be found'","C) 'Arise, shine; for thy light is come, and the glory of the Lord is risen upon thee'","D) 'Return unto me and I will return unto thee'"],answer:"C",explanation:"'Arise, shine; for thy light is come, and the glory of the Lord is risen upon thee.'",ref:"Isaiah 60:1"},
   {q:"Micah prophesied against the corrupt leaders of Israel for doing what?",options:["A) Collecting excessive temple taxes","B) 'Eating the flesh of my people' — exploiting and oppressing the poor","C) Making treaties with foreign nations","D) Selling temple offices to the highest bidder"],answer:"B",explanation:"Micah accused Israel's rulers of hating the good and loving evil, flaying the people's skin — a graphic image of economic and judicial oppression.",ref:"Micah 3:2–3"}
 ],
-28: [
+30: [
   {q:"God called Jeremiah to be a prophet before he was born. What was Jeremiah's initial objection?",options:["A) He was too sinful","B) He was too busy","C) He was a child who could not speak","D) He came from a tribe that could not prophesy"],answer:"C",explanation:"Jeremiah said 'I cannot speak: for I am a child' — and God replied He had already sanctified and ordained him.",ref:"Jeremiah 1:6"},
   {q:"God told Jeremiah He knew him and set him apart before what event?",options:["A) Before Jeremiah's bar mitzvah","B) Before Jeremiah was born — before God formed him in the womb","C) Before the reign of Josiah","D) Before the fall of the northern kingdom"],answer:"B",explanation:"'Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee.'",ref:"Jeremiah 1:5"},
   {q:"Jeremiah 29:11 is a beloved promise. God declares His thoughts toward Israel are plans for what?",options:["A) Punishment and correction","B) Peace and not evil — to give them a future and a hope","C) Restoration of the temple","D) Victory over Babylon"],answer:"B",explanation:"'I know the thoughts that I think toward you...thoughts of peace and not of evil, to give you an expected end (a future and a hope).'",ref:"Jeremiah 29:11"},
@@ -874,7 +901,7 @@ en: {
   {q:"Jeremiah 20:9 describes Jeremiah's attempt to stop prophesying. What happened?",options:["A) He lost his voice for seven days","B) God's word became like a burning fire shut up in his bones — he could not hold it in","C) He fell into a deep sleep and received new visions","D) He found peace and stopped lamenting"],answer:"B",explanation:"Jeremiah tried to give up but the word was like fire in his bones; he was weary of holding it in and could not.",ref:"Jeremiah 20:9"},
   {q:"What was the ultimate fate of Jerusalem that Jeremiah prophesied and witnessed?",options:["A) It was spared because of Jeremiah's intercession","B) It was conquered by Babylon, the temple burned, and Judah taken into captivity","C) It fell to Egypt while Babylon watched","D) It was partially destroyed but quickly rebuilt"],answer:"B",explanation:"Babylon under Nebuchadnezzar destroyed Jerusalem, burned Solomon's temple, and carried Judah into captivity — exactly as Jeremiah prophesied.",ref:"Jeremiah 39:1–9"}
 ],
-29: [
+31: [
   {q:"Ezekiel's famous vision in chapter 1 featured four living creatures, a gleaming expanse, and wheels within wheels. What was Ezekiel's reaction?",options:["A) He shouted for joy","B) He fell on his face","C) He ran to tell the people","D) He asked God for an explanation"],answer:"B",explanation:"When Ezekiel saw the glory of the Lord he fell upon his face — and then heard a voice speaking.",ref:"Ezekiel 1:28"},
   {q:"God called Ezekiel 'son of man' throughout the book. What does this title emphasize?",options:["A) Ezekiel's royal lineage","B) Ezekiel's mortality and humanity before the divine","C) Ezekiel's priestly role","D) Ezekiel's mission to the Gentile nations"],answer:"B",explanation:"'Son of man' repeatedly underscores the contrast between Ezekiel's creaturely humanity and God's transcendent glory.",ref:"Ezekiel 2:1"},
   {q:"Ezekiel 18:20 overturns a popular misconception. What principle does it establish?",options:["A) Children always inherit their fathers' righteousness","B) The soul that sins shall die — sons shall not bear the iniquity of fathers; each person is responsible for their own choices","C) Collective punishment applies to all generations","D) Repentance can remove judgment from a nation's entire history"],answer:"B",explanation:"'The soul that sinneth, it shall die. The son shall not bear the iniquity of the father' — individual moral accountability.",ref:"Ezekiel 18:20"},
@@ -889,6 +916,30 @@ en: {
 },
 es: {
 12: [
+  {q:"¿Qué ordenó el Faraón para detener el crecimiento de la población de Israel?",options:["A) Limitar su comida","B) Hacerlos trabajar más duro","C) Matar a todo hijo varón hebreo recién nacido","D) Dispersarlos entre los egipcios"],answer:"C",explanation:"El Faraón ordenó que todo hijo varón nacido de los hebreos fuera arrojado al río, mientras que las hijas podían vivir.",ref:"Éxodo 1:22"},
+  {q:"La madre de Moisés lo escondió tres meses y luego lo puso en ¿qué?",options:["A) Una cueva cerca del Nilo","B) Un arca de juncos entre los carrizos","C) Una canasta dejada en la puerta de la ciudad","D) Una tienda en el desierto"],answer:"B",explanation:"Hizo un arca de juncos, la calafateó con asfalto y brea, puso al niño en ella y la colocó entre los juncos a la orilla del río.",ref:"Éxodo 2:3"},
+  {q:"¿Quién descubrió al bebé Moisés en el río?",options:["A) Una partera hebrea","B) La esposa del Faraón","C) La hija del Faraón","D) Una mujer mercader egipcia"],answer:"C",explanation:"La hija del Faraón bajó a lavarse al río, vio el arca entre los juncos y mandó a su criada que la trajera.",ref:"Éxodo 2:5"},
+  {q:"Moisés huyó de Egipto después de matar a un egipcio. ¿A dónde fue?",options:["A) Canaán","B) Madián","C) Sinaí","D) Arabia"],answer:"B",explanation:"Moisés huyó a la tierra de Madián después de que el Faraón oyó lo que había hecho y procuró matarlo.",ref:"Éxodo 2:15"},
+  {q:"¿Qué hacía Moisés cuando Dios se le apareció en la zarza ardiente?",options:["A) Oraba en el desierto","B) Dormía bajo un árbol","C) Apacentaba el rebaño de su suegro Jetro","D) Sacaba agua de un pozo"],answer:"C",explanation:"Moisés apacentaba las ovejas de Jetro su suegro en el desierto cuando el ángel del Señor se le apareció.",ref:"Éxodo 3:1-2"},
+  {q:"¿Qué dijo Dios cuando Moisés preguntó Su nombre?",options:["A) 'Soy el Dios de Abraham'","B) 'YO SOY EL QUE SOY'","C) 'Soy Jehová tu Dios'","D) 'Llámame el Padre Eterno'"],answer:"B",explanation:"Dios dijo 'YO SOY EL QUE SOY' e instruyó a Moisés a decir a Israel que 'YO SOY me envió a vosotros.'",ref:"Éxodo 3:14"},
+  {q:"¿Qué milagro mostró Dios a Moisés en la zarza ardiente para probar Su poder?",options:["A) Agua convertida en sangre","B) Una vara que se convirtió en serpiente y una mano que se volvió leprosa y luego fue sanada","C) Fuego del cielo","D) Una voz del cielo audible para todos"],answer:"B",explanation:"Dios hizo que Moisés arrojara su vara (se convirtió en serpiente) y pusiera su mano en su seno (se volvió leprosa, luego fue restaurada) como señales para Israel.",ref:"Éxodo 4:2-7"},
+  {q:"¿Qué razón dio Moisés para no querer hablar con el Faraón?",options:["A) Temía ser muerto","B) No sabía egipcio","C) Era tardo en el habla y torpe de lengua","D) Era demasiado mayor"],answer:"C",explanation:"Moisés dijo a Dios que no era elocuente y era tardo en el habla y de lengua — y Dios le recordó que Él hizo la boca del hombre.",ref:"Éxodo 4:10"},
+  {q:"Las parteras hebreas Sifra y Fúa desobedecieron al Faraón. ¿Qué le dijeron?",options:["A) Que temían a Dios más que a cualquier rey","B) Que las mujeres hebreas daban a luz antes de que llegaran las parteras","C) Que Dios les había prohibido dañar a los niños","D) Que habían sido sobornadas por los ancianos hebreos"],answer:"B",explanation:"Las parteras temían a Dios y no mataban a los niños; cuando fueron confrontadas, dijeron al Faraón que las mujeres hebreas daban a luz antes de que llegaran.",ref:"Éxodo 1:17-19"},
+  {q:"Cuando Moisés y Aarón le dijeron por primera vez al Faraón 'Deja ir a mi pueblo', ¿qué hizo el Faraón?",options:["A) Pidió tiempo para considerar","B) Consultó a sus sacerdotes","C) Se negó y aumentó la carga de trabajo de Israel — exigiendo ladrillos sin proveer paja","D) Expulsó a Moisés de Egipto"],answer:"C",explanation:"El Faraón llamó a Moisés y Aarón alborotadores y ordenó que Israel recogiera su propia paja manteniendo la misma cuota de ladrillos.",ref:"Éxodo 5:7-9"}
+],
+13: [
+  {q:"El título de la lección de Pascua es 'Él destruirá a la muerte para siempre.' ¿De qué profeta del Antiguo Testamento viene esta frase?",options:["A) Jeremías","B) Ezequiel","C) Isaías","D) Miqueas"],answer:"C",explanation:"Isaías 25:8 declara 'Destruirá a la muerte para siempre; y enjugará Jehová el Señor toda lágrima de todos los rostros.'",ref:"Isaías 25:8"},
+  {q:"Isaías profetizó de la Expiación en el capítulo 53. ¿Qué frase describe a Cristo llevando nuestros pecados?",options:["A) 'Él llevó nuestras enfermedades y sufrió nuestros dolores'","B) 'Ascendió por encima de las nubes'","C) 'Gobernó con vara de hierro'","D) 'Reunió a las naciones ante Él'"],answer:"A",explanation:"Isaías 53:4 dice 'Ciertamente llevó él nuestras enfermedades, y sufrió nuestros dolores', apuntando al sufrimiento expiatorio de Cristo.",ref:"Isaías 53:4"},
+  {q:"La Resurrección de Jesucristo cumple qué promesa hecha por los profetas del Antiguo Testamento sobre la muerte?",options:["A) Que los justos nunca morirían","B) Que la muerte sería destruida para siempre y no tendría poder permanente","C) Que solo los profetas resucitarían","D) Que la tierra sería destruida en la Resurrección"],answer:"B",explanation:"Isaías 25:8 y Oseas 13:14 contienen promesas de que Dios destruiría el poder de la muerte — cumplidas en la Resurrección de Cristo.",ref:"Isaías 25:8; Oseas 13:14"},
+  {q:"Job expresó esperanza en la resurrección cuando declaró ¿qué?",options:["A) 'En mi carne veré a Dios después que mi piel sea destruida'","B) 'Mis huesos volverán al polvo'","C) 'Dios me recordará después de la muerte'","D) 'Mi espíritu ascenderá al cielo'"],answer:"A",explanation:"Job 19:26 — 'Y después de deshecha esta mi piel, en mi carne veré a Dios' — es uno de los testimonios de resurrección más claros del Antiguo Testamento.",ref:"Job 19:26"},
+  {q:"En la primera mañana de Pascua, la tumba fue encontrada vacía. Jesús se apareció primero a ¿quién?",options:["A) Pedro y Juan","B) Los once Apóstoles","C) María Magdalena","D) Su madre María"],answer:"C",explanation:"Juan 20:14-16 registra que Jesús se apareció primero a María Magdalena fuera de la tumba, llamándola por su nombre.",ref:"Juan 20:14-16"},
+  {q:"La resurrección de Jesús es central en el evangelio. Pablo escribió que sin ella, nuestra fe sería ¿qué?",options:["A) Incompleta","B) Vana — vacía e inútil","C) Todavía suficiente para la salvación","D) Basada solo en obras"],answer:"B",explanation:"1 Corintios 15:17 — 'Y si Cristo no resucitó, vuestra fe es vana; aún estáis en vuestros pecados.'",ref:"1 Corintios 15:17"},
+  {q:"El cordero de la Pascua en Éxodo prefiguró a Jesucristo. ¿Qué simbolizaba la sangre del cordero en el marco de la puerta?",options:["A) La obediencia de Israel a Moisés","B) La sangre de Cristo protegiendo a los fieles de la muerte espiritual","C) El castigo de Egipto por la esclavitud","D) El pacto entre Moisés y el Faraón"],answer:"B",explanation:"El cordero pascual — sin mancha, su sangre protegiendo a Israel del destructor — era un tipo de Cristo, cuya Expiación nos protege de la muerte espiritual.",ref:"Éxodo 12:7; 1 Corintios 5:7"},
+  {q:"Ezequiel 37 usa huesos secos que cobran vida como símbolo de restauración. ¿Cómo se relaciona esto con la Resurrección?",options:["A) Predice que los huesos se ensamblarán literalmente en el último día","B) Usa la imagen de la muerte cediendo a la nueva vida — un símbolo del poder de la resurrección","C) Describe solo la restauración nacional de Israel sin conexión con la resurrección","D) Predice que solo los profetas resucitarán"],answer:"B",explanation:"La visión del valle de los huesos secos representa poderosamente el poder de Dios para traer vida de la muerte — el mismo poder demostrado en la Resurrección literal de Cristo.",ref:"Ezequiel 37:1-14"},
+  {q:"Isaías 53:10-11 dice que después del sufrimiento del Salvador Él 'verá linaje' y 'prolongará sus días.' ¿Qué sugiere esto?",options:["A) Isaías predijo que Cristo tendría hijos mortales","B) Isaías previó que Cristo sobreviviría Su sufrimiento y viviría de nuevo — una profecía de resurrección","C) Isaías hablaba de su propia posteridad","D) Esto se refiere solo al ministerio mortal de Cristo"],answer:"B",explanation:"El Siervo que 'derramó su vida hasta la muerte' vería después 'el fruto de la aflicción de su alma' — la resurrección implícita en la misma estructura de la profecía.",ref:"Isaías 53:10-11"},
+  {q:"Debido a la Resurrección, ¿qué dijo Pablo que les ocurriría a los cuerpos de los justos que han muerto?",options:["A) Se volverían espirituales e invisibles","B) Se reunirían con sus espíritus en una resurrección gloriosa","C) Permanecerían en la tumba hasta el Milenio","D) Serían juzgados inmediatamente al morir"],answer:"B",explanation:"1 Corintios 15:42-44 enseña que el cuerpo se siembra en corrupción y se resucita en incorrupción — una resurrección gloriosa para todos.",ref:"1 Corintios 15:42-44"}
+],
+14: [
   {q:"¿Cuál fue la primera plaga que Dios envió sobre Egipto?",options:["A) Ranas","B) Oscuridad","C) El agua convertida en sangre","D) Langostas"],answer:"C",explanation:"Aarón golpeó el Nilo y se convirtió en sangre, la primera de las diez plagas.",ref:"Éxodo 7:20"},
   {q:"¿Qué plaga convenció finalmente al Faraón de dejar ir a Israel?",options:["A) El granizo","B) La muerte de los primogénitos","C) Las langostas","D) Las úlceras"],answer:"B",explanation:"La muerte de cada primogénito egipcio, incluyendo el hijo del Faraón, quebrantó su resistencia.",ref:"Éxodo 12:29–30"},
   {q:"¿Qué pusieron los israelitas en sus marcos de puerta para que el destructor los pasara por alto?",options:["A) Aceite de oliva","B) Madera de cedro","C) Sangre de un cordero","D) Agua salada"],answer:"C",explanation:"La sangre de un cordero sin mancha marcaba los marcos de las casas israelitas fieles.",ref:"Éxodo 12:7"},
@@ -900,7 +951,7 @@ es: {
   {q:"La oscuridad de tres días en Egipto fue la novena plaga. ¿Qué grupo NO fue afectado?",options:["A) Los sacerdotes egipcios","B) Los niños egipcios","C) Los hijos de Israel","D) Los mercaderes egipcios"],answer:"C",explanation:"Los israelitas tenían luz en sus moradas mientras Egipto estaba en densa oscuridad.",ref:"Éxodo 10:23"},
   {q:"¿Qué fiesta instituyó Dios para conmemorar la Pascua por todas las generaciones?",options:["A) La Fiesta de los Tabernáculos","B) La Fiesta de las Semanas","C) La Fiesta de la Pascua","D) La Fiesta de las Primicias"],answer:"C",explanation:"La Pascua debía observarse como estatuto para siempre en todas las generaciones de Israel.",ref:"Éxodo 12:14"}
 ],
-13: [
+15: [
   {q:"¿Cómo partió Dios el Mar Rojo para Moisés?",options:["A) Moisés golpeó el agua con una piedra","B) Moisés extendió su vara sobre el mar","C) Moisés oró y el viento lo dividió","D) Un ángel empujó las aguas a un lado"],answer:"B",explanation:"Dios dijo a Moisés que extendiera su mano y su vara sobre el mar, y un fuerte viento del oriente dividió las aguas.",ref:"Éxodo 14:16, 21"},
   {q:"¿Qué le pasó al ejército egipcio que persiguió a Israel hacia el Mar Rojo?",options:["A) Se detuvieron en la orilla","B) Quedaron ciegos","C) Las aguas volvieron y los ahogaron","D) Se rindieron"],answer:"C",explanation:"Cuando Israel cruzó, Moisés extendió su mano sobre el mar y las aguas regresaron, cubriendo los carros y jinetes egipcios.",ref:"Éxodo 14:27–28"},
   {q:"Miriam guió a las mujeres de Israel en un cántico de alabanza después de cruzar el Mar Rojo. ¿Qué instrumento usó?",options:["A) Arpa","B) Pandero (tamborín)","C) Trompeta","D) Lira"],answer:"B",explanation:"Miriam la profetisa tomó un pandero y guió a las mujeres en cántico y danza ante el Señor.",ref:"Éxodo 15:20"},
@@ -912,7 +963,7 @@ es: {
   {q:"Jetro, el suegro de Moisés, le dio sabio consejo sobre ¿qué?",options:["A) Cómo construir el tabernáculo","B) Cómo dividir el liderazgo y delegar el juzgar al pueblo","C) Cómo combatir a Amalec","D) Cómo recoger las ofrendas"],answer:"B",explanation:"Jetro vio a Moisés juzgando solo y le aconsejó nombrar hombres capaces como jefes de miles, cientos, cincuenta y diez.",ref:"Éxodo 18:17–22"},
   {q:"¿Qué alimentó Dios a Israel cuando anhelaban carne en el desierto?",options:["A) Maná con sabor a carne","B) Codornices","C) Cabras silvestres","D) Peces del mar"],answer:"B",explanation:"El Señor envió codornices por la tarde que cubrieron el campamento, proveyendo carne para Israel.",ref:"Éxodo 16:13"}
 ],
-14: [
+16: [
   {q:"¿Qué dijo Dios que sería Israel si guardaba Su pacto: un reino de qué?",options:["A) Guerreros y conquistadores","B) Sacerdotes y nación santa","C) Eruditos y maestros","D) Pastores y agricultores"],answer:"B",explanation:"Dios dijo a Israel que sería para Él un reino de sacerdotes y una nación santa.",ref:"Éxodo 19:6"},
   {q:"¿Cuánto tiempo ayunó Moisés en el Monte Sinaí cuando recibió la ley?",options:["A) Siete días","B) Veinte días","C) Cuarenta días y cuarenta noches","D) Tres días"],answer:"C",explanation:"Moisés estuvo con el Señor cuarenta días y cuarenta noches sin comer pan ni beber agua.",ref:"Éxodo 34:28"},
   {q:"¿Cuál fue el primero de los Diez Mandamientos?",options:["A) Acuérdate del día de reposo","B) Honra a tu padre y a tu madre","C) No tendrás dioses ajenos delante de Mí","D) No matarás"],answer:"C",explanation:"El primer mandamiento establece que Israel no tendrá otros dioses delante del Señor.",ref:"Éxodo 20:3"},
@@ -924,7 +975,7 @@ es: {
   {q:"¿Por qué dijo Aarón que arrojó el oro al fuego al construir el becerro?",options:["A) El pueblo lo forzó","B) Siguió el mandato de Dios","C) Dijo que el becerro salió solo","D) Estaba probando la fe del pueblo"],answer:"C",explanation:"Aarón dijo débilmente que arrojó el oro y 'salió este becerro', eludiendo la responsabilidad.",ref:"Éxodo 32:24"},
   {q:"¿Qué pacto renovó Dios con Moisés después del incidente del becerro de oro?",options:["A) Solo el pacto abrahánico","B) El pacto noáico","C) El pacto mosaico, con nuevas tablas de piedra","D) Un nuevo pacto con Aarón"],answer:"C",explanation:"Dios dijo a Moisés que labrara dos nuevas tablas y Él escribiría los mandamientos de nuevo, renovando el pacto.",ref:"Éxodo 34:1"}
 ],
-15: [
+17: [
   {q:"¿Cómo se llamaba el gran velo en el tabernáculo que separaba el Lugar Santo del Lugar Santísimo?",options:["A) La cortina de lino","B) El velo","C) El toldo","D) La cortina de reunión"],answer:"B",explanation:"El velo de azul, púrpura y carmesí separaba el Lugar Santo del Lugar Santísimo donde reposaba el arca.",ref:"Éxodo 26:33"},
   {q:"¿Qué descansaba sobre el Arca del Pacto?",options:["A) El candelabro de oro","B) El propiciatorio","C) La fuente de bronce","D) El altar del incienso"],answer:"B",explanation:"El propiciatorio, con sus dos querubines de oro, cubría el arca — el lugar donde Dios dijo que se encontraría con Israel.",ref:"Éxodo 25:17–22"},
   {q:"¿Qué ofrenda en Levítico se requería específicamente para los pecados involuntarios?",options:["A) Ofrenda de paz","B) Ofrenda por la culpa","C) Ofrenda por el pecado","D) Holocausto"],answer:"C",explanation:"La ofrenda por el pecado estaba prescrita para las violaciones involuntarias de los mandamientos de Dios.",ref:"Levítico 4:2"},
@@ -936,7 +987,7 @@ es: {
   {q:"¿Cómo guió Dios a Israel por el desierto después de que se construyó el tabernáculo?",options:["A) Una columna de fuego de noche y una nube de día sobre el tabernáculo","B) Un ángel caminando delante de ellos","C) El Urim y Tumim","D) La vara de Moisés"],answer:"A",explanation:"La nube del Señor cubría el tabernáculo de día y había fuego sobre él de noche, guiando las jornadas de Israel.",ref:"Éxodo 40:38"},
   {q:"¿Qué tribu de Israel fue apartada para servir como sacerdotes y cuidar el tabernáculo?",options:["A) Judá","B) Benjamín","C) Leví","D) Efraín"],answer:"C",explanation:"La tribu de Leví fue consagrada al servicio del tabernáculo en lugar de los primogénitos de todo Israel.",ref:"Números 3:12"}
 ],
-16: [
+18: [
   {q:"¿Qué trajeron los doce espías de Canaán para mostrar la abundancia de la tierra?",options:["A) Una canasta de higos","B) Un racimo de uvas tan grande que requería dos hombres para cargarlo","C) Un frasco de miel","D) Una gavilla de trigo"],answer:"B",explanation:"Del valle de Escol cortaron un sarmiento con un racimo de uvas llevado en un palo entre dos hombres.",ref:"Números 13:23"},
   {q:"De los doce espías, ¿quiénes dieron un informe fiel y animaron a Israel a entrar a Canaán?",options:["A) Moisés y Aarón","B) Caleb y Josué","C) Solo Caleb","D) Josué y Finees"],answer:"B",explanation:"Caleb y Josué fueron los únicos dos espías que creyeron que Dios los ayudaría a conquistar la tierra.",ref:"Números 13:30; 14:6–8"},
   {q:"Por negarse a entrar a Canaán, ¿cuánto tiempo dijo Dios que vagarían en el desierto?",options:["A) Siete años","B) Veinte años","C) Cuarenta años","D) Toda la vida"],answer:"C",explanation:"Un año por cada uno de los cuarenta días del espionaje — cuarenta años — hasta que muriera esa generación incrédula.",ref:"Números 14:34"},
@@ -948,7 +999,7 @@ es: {
   {q:"¿Cuál fue el pecado de Israel que causó una plaga que mató a 24,000 personas cerca de Moab?",options:["A) Quebrantar el día de reposo","B) Adorar al Baal de Peor e inmoralidad sexual con mujeres moabitas","C) Negarse a ofrecer sacrificios","D) Murmurar contra Moisés de nuevo"],answer:"B",explanation:"Israel se unió al Baal de Peor a través de mujeres moabitas, y la ira de Dios ardió contra ellos.",ref:"Números 25:1–9"},
   {q:"¿Cómo detuvo Finees la plaga?",options:["A) Orando en el altar","B) Expulsando a las mujeres moabitas","C) Atravesando con una lanza a un israelita y a una mujer madianita","D) Quemando los ídolos"],answer:"C",explanation:"El acto celoso de Finees contuvo la ira de Dios y detuvo la plaga.",ref:"Números 25:7–8"}
 ],
-17: [
+19: [
   {q:"¿Cuál es la palabra hebrea que Moisés recita en el corazón de Deuteronomio 6, que significa 'Escucha, oh Israel'?",options:["A) Aleluya","B) Shemá","C) Hosanna","D) Selah"],answer:"B",explanation:"'Shemá Israel' — 'Oye, Israel: Jehová nuestro Dios, Jehová uno es' — es la confesión central de la fe israelita.",ref:"Deuteronomio 6:4"},
   {q:"Moisés dijo a Israel que amara a Dios con todo su corazón, alma y ¿qué más?",options:["A) Fuerza","B) Mente","C) Riqueza","D) Días"],answer:"A",explanation:"'Amarás a Jehová tu Dios de todo tu corazón, y de toda tu alma, y con todas tus fuerzas.'",ref:"Deuteronomio 6:5"},
   {q:"Moisés advirtió a Israel que cuando prosperaran en Canaán debían guardarse de ¿qué?",options:["A) Ejércitos extranjeros","B) Olvidar a Dios que los sacó de Egipto","C) Mezclarse con otras naciones","D) Descuidar a los sacerdotes"],answer:"B",explanation:"Moisés temía que la abundancia y las casas lujosas hicieran que Israel olvidara al Señor su Dios.",ref:"Deuteronomio 8:11–14"},
@@ -960,7 +1011,7 @@ es: {
   {q:"Moisés recitó un cántico a Israel cerca del final de su vida. ¿Cuál era su propósito?",options:["A) Celebrar su victoria sobre Madián","B) Servir como testigo contra Israel si se apartaban de Dios","C) Alabar a Dios por el maná","D) Enseñar las leyes del sacerdocio"],answer:"B",explanation:"Dios dijo a Moisés que el cántico sería testigo contra Israel cuando lo abandonaran en la tierra prometida.",ref:"Deuteronomio 31:19–21"},
   {q:"¿Quién fue elegido para dirigir a Israel después de Moisés?",options:["A) Caleb","B) Finees","C) Eleazar, el hijo de Aarón","D) Josué"],answer:"D",explanation:"Dios comisionó a Josué ante todo Israel para que los guiara a la tierra prometida.",ref:"Deuteronomio 31:7–8"}
 ],
-18: [
+20: [
   {q:"¿Qué promesa le dio Dios a Josué al comienzo de su liderazgo?",options:["A) Que nunca enfrentaría ningún enemigo","B) 'No te dejaré ni te abandonaré — esfuérzate y sé valiente'","C) Que sería más sabio que Moisés","D) Que todo Canaán se rendiría sin batalla"],answer:"B",explanation:"Dios repitió el mandato de ser fuerte y valiente, prometiendo Su presencia constante con Josué.",ref:"Josué 1:5–9"},
   {q:"¿Quién escondió a los dos espías que Josué envió a Jericó?",options:["A) Una familia levita","B) Un viejo posadero","C) Rahab, la ramera","D) Un soldado cananeo simpatizante"],answer:"C",explanation:"Rahab escondió a los espías en su techo bajo tallos de lino y los ayudó a escapar.",ref:"Josué 2:4, 6"},
   {q:"¿Qué señal puso Rahab en su ventana para que Israel preservara su hogar?",options:["A) Una tela blanca","B) Un cordón escarlata","C) Una rama de olivo","D) Una lámpara encendida"],answer:"B",explanation:"Los espías dijeron a Rahab que atara un cordón de hilo escarlata en su ventana como señal de protección.",ref:"Josué 2:18"},
@@ -972,7 +1023,7 @@ es: {
   {q:"¿Qué levantó Josué en Gilgal después de cruzar el Jordán?",options:["A) Un altar para holocaustos","B) Un monumento de doce piedras del lecho del río","C) Un tabernáculo para el arca","D) Un muro conmemorativo"],answer:"B",explanation:"Doce hombres, uno de cada tribu, tomaron cada uno una piedra del lecho del Jordán, y Josué las levantó como memorial en Gilgal.",ref:"Josué 4:20"},
   {q:"¿Qué ocurrió cuando Josué preguntó al príncipe del ejército del Señor de qué bando era?",options:["A) Dijo que estaba del lado de Israel","B) Dijo que estaba del lado de Jericó","C) Dijo que no estaba de ningún lado — era el príncipe del ejército del Señor","D) Desapareció sin responder"],answer:"C",explanation:"El comandante celestial dijo que era el príncipe del ejército del Señor — servía a Dios, no a una facción humana.",ref:"Josué 5:14"}
 ],
-19: [
+21: [
   {q:"¿Qué ciclo muestra repetidamente el libro de Jueces?",options:["A) Prosperidad → guerra → paz","B) Fidelidad → bendición → apostasía → opresión → arrepentimiento → liberación","C) Apostasía → exilio → regreso","D) Guerra → tratado → prosperidad"],answer:"B",explanation:"Jueces documenta un ciclo repetido: Israel peca, Dios permite la opresión, Israel clama, Dios levanta un libertador.",ref:"Jueces 2:16–19"},
   {q:"Débora era única entre los jueces porque también era ¿qué?",options:["A) Una reina","B) Una suma sacerdotisa","C) Una profetisa","D) Solo una general militar"],answer:"C",explanation:"Débora era una profetisa que juzgaba a Israel — atendía casos bajo la palmera de Débora.",ref:"Jueces 4:4"},
   {q:"¿Quién mató al comandante cananeo Sísara después de la victoria de Débora?",options:["A) Barac","B) Débora","C) Jael con una estaca de tienda","D) Un soldado israelita anónimo"],answer:"C",explanation:"Jael clavó una estaca de tienda en la sien de Sísara mientras dormía, cumpliendo la profecía de Débora.",ref:"Jueces 4:21"},
@@ -984,7 +1035,7 @@ es: {
   {q:"¿Qué tribu cayó en el caos y la guerra civil en parte por el crimen en Gabaa?",options:["A) Dan","B) Manasés","C) Benjamín","D) Simeón"],answer:"C",explanation:"La atrocidad de Gabaa fue cometida por benjaminitas, lo que llevó a una devastadora guerra civil contra la tribu de Benjamín.",ref:"Jueces 20:12–14"},
   {q:"El problema repetido de Israel en Jueces se resume en una frase: 'Cada uno hacía...'",options:["A) '...lo que los ancianos mandaban'","B) '...lo que bien le parecía'","C) '...lo que las naciones extranjeras enseñaban'","D) '...lo que los sacerdotes permitían'"],answer:"B",explanation:"El libro termina dos veces con el veredicto de que cada uno hacía lo que bien le parecía — consecuencia de no tener un rey piadoso.",ref:"Jueces 21:25"}
 ],
-20: [
+22: [
   {q:"¿De qué nación era Rut?",options:["A) Amón","B) Edom","C) Moab","D) Filistea"],answer:"C",explanation:"Rut es identificada a lo largo del libro como Rut la moabita.",ref:"Rut 1:4"},
   {q:"¿Qué declaró famosamente Rut a Noemí después de que Orfa se volvió?",options:["A) 'Me quedaré hasta que estés segura, luego regresaré a casa'","B) 'A donde tú fueres iré yo; tu pueblo será mi pueblo; tu Dios será mi Dios'","C) 'No tengo razón para dejarte, Noemí'","D) 'Dios me ha dicho que te siga a Israel'"],answer:"B",explanation:"La declaración de lealtad de Rut a Noemí es una de las expresiones más celebradas del amor de pacto en el Antiguo Testamento.",ref:"Rut 1:16"},
   {q:"¿Qué era la práctica del espigar en la que participó Rut?",options:["A) Comprar grano a precio de mercado","B) Recoger el grano dejado por los segadores en los campos","C) Pedir grano prestado para devolver en la cosecha","D) Trabajar como jornalera en el campo"],answer:"B",explanation:"La ley de Moisés permitía a los pobres y al extranjero recoger lo que los segadores dejaban atrás.",ref:"Rut 2:2; Levítico 19:9–10"},
@@ -996,7 +1047,7 @@ es: {
   {q:"¿Qué hijo nació a Boaz y Rut, trayendo gran alegría a Noemí?",options:["A) Isaí","B) Obed","C) Salmón","D) Boaz el joven"],answer:"B",explanation:"Lo llamaron Obed; fue el padre de Isaí y abuelo de David.",ref:"Rut 4:17"},
   {q:"El libro de Rut muestra que el pacto de Dios se extendía más allá de Israel. Rut, una moabita, se convirtió en antepasada de ¿quién?",options:["A) El profeta Jeremías","B) El rey Salomón","C) El rey David y en última instancia Jesucristo","D) El sumo sacerdote Sadoc"],answer:"C",explanation:"Rut aparece en la genealogía que lleva a David y, a través de él, a Jesucristo.",ref:"Rut 4:17, 22; Mateo 1:5"}
 ],
-21: [
+23: [
   {q:"La oración y el cántico de Ana en 1 Samuel prefiguran la oración posterior de ¿quién?",options:["A) Débora","B) El Magnificat de María","C) El salmo de alabanza de David","D) La oración de Salomón en el templo"],answer:"B",explanation:"El cántico de exultación de Ana sobre Dios que levanta a los humildes se corresponde estrechamente con el Magnificat de María en Lucas 1.",ref:"1 Samuel 2:1–10"},
   {q:"Samuel oyó la voz de Dios llamándolo en la noche en el tabernáculo. ¿Quién finalmente reconoció que era el Señor?",options:["A) Samuel reconoció inmediatamente la voz de Dios","B) Su madre Ana se lo dijo","C) El sacerdote Elí, al tercer llamado, le dijo a Samuel que respondiera a Dios","D) Un ángel apareció para explicarlo"],answer:"C",explanation:"Después del tercer llamado, Elí percibió que el Señor estaba hablando al niño e instruyó a Samuel a responder.",ref:"1 Samuel 3:8–9"},
   {q:"¿Qué demandó Israel de Samuel a pesar de la advertencia de Dios?",options:["A) Un tabernáculo en cada ciudad","B) Un rey como las otras naciones","C) Un ejército permanente","D) Un consejo de sacerdotes"],answer:"B",explanation:"Israel insistió en tener un rey que los juzgara y los guiara en la batalla como todas las naciones a su alrededor.",ref:"1 Samuel 8:5"},
@@ -1008,7 +1059,7 @@ es: {
   {q:"Jonatán, el hijo de Saúl, hizo un pacto de amistad con David. ¿Qué le dio Jonatán como señal?",options:["A) El anillo de sello de su padre","B) Su propio manto, armadura, espada, arco y cinto","C) Tierra en Gabaa","D) Una porción del reino"],answer:"B",explanation:"Jonatán se quitó su manto, armadura, espada, arco y cinto y los dio a David — un profundo acto de amor desinteresado.",ref:"1 Samuel 18:3–4"},
   {q:"David perdonó la vida de Saúl dos veces. ¿Qué razón dio David para no matarlo?",options:["A) Temía al ejército de Saúl","B) Amaba a Saúl como a un padre","C) Saúl era el ungido del Señor y David no extendería su mano contra él","D) Esperaba una mejor oportunidad"],answer:"C",explanation:"David se negó a herir a Saúl porque era el ungido del Señor — incluso cuando sus hombres lo instaban.",ref:"1 Samuel 24:6"}
 ],
-22: [
+24: [
   {q:"David vio a Betsabé bañándose desde su terraza. ¿Qué debe notarse sobre su posición en ese momento?",options:["A) Era demasiado joven para estar en la guerra","B) Era el tiempo cuando los reyes salen a la guerra — David se había quedado en casa","C) Se estaba recuperando de una enfermedad","D) Ya había designado a Joab como único comandante"],answer:"B",explanation:"El texto señala que era la temporada en que los reyes salen a la guerra — la ociosidad de David creó la oportunidad para su pecado.",ref:"2 Samuel 11:1"},
   {q:"Después de que David ordenó la muerte de Urías, el profeta Natán lo confrontó con una parábola sobre ¿qué?",options:["A) Un juez corrupto que robó la tierra de una viuda","B) Un hombre rico que tomó la única corderita amada del hombre pobre","C) Un rey que llevó a su pueblo a la pobreza con impuestos","D) Un pastor que abandonó su rebaño"],answer:"B",explanation:"La parábola de Natán sobre el robo del hombre rico de la única corderita del hombre pobre expuso el propio pecado de David de tomar a la esposa de Urías.",ref:"2 Samuel 12:1–4"},
   {q:"Cuando Natán declaró '¡Tú eres aquel hombre!', ¿cómo respondió David?",options:["A) Negó la acusación","B) Ordenó arrestar a Natán","C) Inmediatamente confesó 'Pequé contra Jehová'","D) Lloró pero no admitió la culpa"],answer:"C",explanation:"David hizo una confesión inmediata e inequívoca — 'Pequé contra Jehová.'",ref:"2 Samuel 12:13"},
@@ -1020,7 +1071,7 @@ es: {
   {q:"Cuando Natán dijo que la espada nunca se apartaría de la casa de David, ¿qué tragedia familiar siguió pronto?",options:["A) Su hijo Salomón fue envenenado","B) Su hijo Absalón se rebeló y fue muerto","C) Su hija Mical murió sin hijos","D) Su hijo Amnón lo derrocó brevemente"],answer:"B",explanation:"Absalón se rebeló contra su padre, fue derrotado y muerto por Joab — un dolor que destrozó el corazón de David.",ref:"2 Samuel 18:14–15, 33"},
   {q:"¿Por qué le dijeron a David que no podía construir el templo?",options:["A) Le faltaba riqueza","B) Era demasiado mayor","C) Era un hombre de guerra que había derramado mucha sangre","D) Dios quería que Salomón tuviera todo el honor"],answer:"C",explanation:"Dios dijo a David que porque había derramado mucha sangre y hecho grandes guerras, su hijo construiría la casa.",ref:"1 Crónicas 22:8"}
 ],
-23: [
+25: [
   {q:"Cuando Dios se apareció a Salomón en Gabaón y le ofreció lo que pidiera, ¿qué pidió Salomón?",options:["A) Larga vida y victoria sobre sus enemigos","B) Riquezas y honor","C) Un corazón entendido para juzgar a Israel y discernir el bien y el mal","D) Poder para construir el templo"],answer:"C",explanation:"Salomón pidió sabiduría — un corazón entendido — y Dios se agradó, otorgándole también riquezas y honor.",ref:"1 Reyes 3:5, 9"},
   {q:"El famoso juicio de Salomón involucró a dos mujeres que reclamaban ser la madre de un bebé. ¿Qué amenazó Salomón?",options:["A) Desterrar a las dos mujeres","B) Dividir al niño vivo en dos con una espada","C) Dejar que los ancianos decidieran","D) Consultar el Urim y Tumim"],answer:"B",explanation:"Salomón pidió una espada para partir al niño vivo en dos — el amor de la verdadera madre se reveló cuando clamó para que le perdonaran la vida al niño.",ref:"1 Reyes 3:25"},
   {q:"¿Cuántos años tardó en construirse el templo de Salomón?",options:["A) Tres años","B) Siete años","C) Diez años","D) Quince años"],answer:"B",explanation:"Salomón tardó siete años en construir la casa del Señor.",ref:"1 Reyes 6:38"},
@@ -1032,7 +1083,7 @@ es: {
   {q:"¿Cuál fue la consecuencia de la apostasía de Salomón?",options:["A) El templo sería destruido en su vida","B) El reino sería arrancado de la mano de su hijo — todo menos una tribu","C) Salomón perdería su sabiduría","D) Israel sería conquistado por Egipto"],answer:"B",explanation:"Dios dijo a Salomón que arrancaría el reino de la mano de su hijo, dejando solo una tribu por amor a David.",ref:"1 Reyes 11:11–13"},
   {q:"Proverbios 3:5–6 da ¿qué instrucción sobre confiar en Dios?",options:["A) Confía en tu propia fuerza y Dios te guiará","B) Confía en el Señor con todo tu corazón; no te apoyes en tu propia prudencia; reconócelo en todos tus caminos y Él enderezará tus veredas","C) Busca primero la sabiduría, luego confía en que Dios actúe","D) Teme al Señor y no cuestiones Sus caminos"],answer:"B",explanation:"'Fíate de Jehová de todo tu corazón, y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, y él enderezará tus veredas.'",ref:"Proverbios 3:5–6"}
 ],
-24: [
+26: [
   {q:"Durante la hambruna que Elías causó con su profecía, Dios lo sustentó primero junto a un arroyo llamado Querit. ¿Quién le traía comida allí?",options:["A) Ángeles","B) Cuervos","C) Una viuda","D) Su siervo Eliseo"],answer:"B",explanation:"Dios mandó a los cuervos que trajeran a Elías pan y carne mañana y tarde junto al arroyo Querit.",ref:"1 Reyes 17:6"},
   {q:"El aceite y la harina de la viuda de Sarepta milagrosamente no se agotaron. ¿Qué estaba a punto de hacer cuando llegó Elías?",options:["A) Vender su último alimento en el mercado","B) Hacer una última comida para ella y su hijo antes de morir","C) Viajar a Israel para buscar comida","D) Ofrecer su último grano a los sacerdotes de Baal"],answer:"B",explanation:"Estaba recogiendo leña para hacer una última comida para ella y su hijo — estaban a punto de morir de hambre.",ref:"1 Reyes 17:12"},
   {q:"En el Monte Carmelo, Elías desafió a los 450 profetas de Baal a un concurso. ¿Cuál fue la prueba?",options:["A) A cuya oración primero traería lluvia","B) A cuyo sacrificio respondería con fuego del cielo Dios o Baal","C) Quién podría pasar más tiempo sin comer","D) A cuyo dios silenciaría al otro"],answer:"B",explanation:"Cada parte prepararía un toro en un altar; el dios que respondiera con fuego sería reconocido como el Dios verdadero.",ref:"1 Reyes 18:24"},
@@ -1044,7 +1095,7 @@ es: {
   {q:"¿Cómo partió Elías de la tierra al final de su ministerio?",options:["A) Murió pacíficamente mientras dormía","B) Fue llevado en un torbellino con un carro de fuego","C) Cruzó el Jordán y no se le vio más","D) Ascendió desde el Monte Carmelo"],answer:"B",explanation:"Mientras Elías y Eliseo caminaban, apareció un carro de fuego y Elías subió al cielo en un torbellino.",ref:"2 Reyes 2:11"},
   {q:"¿Quién recibió la doble porción del espíritu de Elías como su sucesor?",options:["A) Jehú","B) Jonás","C) Eliseo","D) Micaías"],answer:"C",explanation:"Eliseo vio a Elías llevado y recibió su manto — y los hijos de los profetas reconocieron que el espíritu de Elías reposaba sobre Eliseo.",ref:"2 Reyes 2:12–15"}
 ],
-25: [
+27: [
   {q:"El primer milagro de Eliseo después de recibir el manto de Elías fue partir el río Jordán. ¿Qué usó?",options:["A) Su bastón","B) El manto de Elías","C) Solo su oración","D) Una piedra del lecho del río"],answer:"B",explanation:"Eliseo tomó el manto de Elías, golpeó las aguas y se partieron — confirmando su sucesión profética.",ref:"2 Reyes 2:14"},
   {q:"Eliseo sanó el manantial de Jericó arrojando ¿qué en él?",options:["A) Cenizas","B) Aceite","C) Sal","D) Madera de cedro"],answer:"C",explanation:"Eliseo echó sal en el manantial y declaró que el Señor había sanado las aguas — desde entonces han sido saludables.",ref:"2 Reyes 2:20–22"},
   {q:"Naamán, comandante del ejército de Siria, tenía lepra. ¿Qué le dijo Eliseo que hiciera para ser sanado?",options:["A) Ofrecer un gran sacrificio en el templo","B) Lavarse siete veces en el río Jordán","C) Ungirse con el aceite que Eliseo le proveyó","D) Ayunar por siete días"],answer:"B",explanation:"Eliseo envió un mensajero diciéndole a Naamán que se lavara siete veces en el Jordán y quedaría limpio.",ref:"2 Reyes 5:10"},
@@ -1056,7 +1107,7 @@ es: {
   {q:"Isaías 9:6 enumera títulos para el niño prometido. ¿Cuál NO es uno de ellos?",options:["A) Admirable, Consejero","B) Dios Fuerte","C) Rey de reyes","D) Padre Eterno"],answer:"C",explanation:"Isaías 9:6 da los nombres Admirable, Consejero, Dios Fuerte, Padre Eterno y Príncipe de Paz — 'Rey de reyes' no está entre ellos.",ref:"Isaías 9:6"},
   {q:"Isaías 11 describe el reino pacífico del Mesías. ¿Qué animales dice que yacerán juntos?",options:["A) León y buey","B) El lobo y el cordero; el leopardo y el cabrito; el león y el becerro","C) El oso y la oveja; el halcón y la paloma","D) El lobo y la oveja; el águila y el gorrión"],answer:"B",explanation:"La visión del reino pacífico de Isaías incluye al lobo morando con el cordero, al leopardo echado con el cabrito, y al león comiendo paja como el buey.",ref:"Isaías 11:6–7"}
 ],
-26: [
+28: [
   {q:"Isaías 40:31 promete que los que esperan en el Señor harán ¿qué?",options:["A) Recibirán todo lo que pidan","B) Renovarán sus fuerzas y volarán como las águilas","C) Heredarán la tierra prometida","D) Recibirán larga vida"],answer:"B",explanation:"'Los que esperan en Jehová tendrán nuevas fuerzas; levantarán alas como las águilas.'",ref:"Isaías 40:31"},
   {q:"Isaías 40:3 profetizó de alguien que 'prepararía el camino del Señor en el desierto.' ¿A quién dijo Jesús que se refería esto?",options:["A) Al propio Isaías","B) A Elías","C) A Juan el Bautista","D) A los Apóstoles colectivamente"],answer:"C",explanation:"Jesús y los cuatro evangelistas identifican a Juan el Bautista como el cumplimiento de la voz de Isaías en el desierto.",ref:"Isaías 40:3; Mateo 3:3"},
   {q:"Isaías 53 describe al Siervo sufriente. Dice 'herido fue por nuestras rebeliones, molido por nuestros...'",options:["A) '...pecados'","B) '...pecados'","C) '...enemigos'","D) '...pueblo'"],answer:"B",explanation:"'Herido fue por nuestras rebeliones, molido por nuestros pecados' — una profecía de la Expiación de Cristo.",ref:"Isaías 53:5"},
@@ -1068,7 +1119,7 @@ es: {
   {q:"Isaías 25:8 contiene una promesa notable sobre la muerte. ¿Qué dice?",options:["A) Dios acortará los días de luto","B) Destruirá a la muerte para siempre y enjugará las lágrimas de todos los rostros","C) Los muertos justos resucitarán en el último día","D) La muerte será desterrada de las fronteras de Israel"],answer:"B",explanation:"'Destruirá a la muerte para siempre; y enjugará Jehová el Señor toda lágrima de todos los rostros.'",ref:"Isaías 25:8"},
   {q:"Isaías 35 describe una restauración futura. ¿Con qué volverán los redimidos del Señor?",options:["A) Ganado y riquezas de las naciones","B) Alegría eterna sobre sus cabezas; la tristeza y el gemido huirán","C) Los rollos de la ley","D) Cantos y ofrendas para el templo"],answer:"B",explanation:"'Y los redimidos de Jehová volverán...con alegría eterna sobre sus cabezas; y los alcanzará la alegría y el gozo, y el dolor y el gemido huirán.'",ref:"Isaías 35:10"}
 ],
-27: [
+29: [
   {q:"Isaías 58:6 define el 'ayuno que Dios ha escogido.' ¿Cuál de los siguientes está incluido?",options:["A) Pasar sin comida por tres días","B) Desatar las ligaduras de maldad, dejar ir libres a los oprimidos y romper todo yugo","C) Vestir cilicio y sentarse en ceniza","D) Ofrecer el doble de sacrificios requeridos"],answer:"B",explanation:"El ayuno escogido de Dios es justicia y liberación para los oprimidos — no mera abstinencia ritual.",ref:"Isaías 58:6"},
   {q:"Isaías 61:1 describe la misión del ungido de Dios. Jesús leyó este pasaje en la sinagoga de Nazaret y declaró que era ¿qué?",options:["A) Una profecía aún por cumplirse","B) Una descripción del propio ministerio de Isaías","C) Cumplida ese día en sus oídos","D) Aplicable solo al regreso de los judíos de Babilonia"],answer:"C",explanation:"Después de leer Isaías 61:1, Jesús dijo 'Hoy se ha cumplido esta Escritura delante de vosotros.'",ref:"Isaías 61:1; Lucas 4:21"},
   {q:"Miqueas 5:2 contiene una profecía sobre dónde nacería el Mesías. ¿Qué ciudad nombra?",options:["A) Jerusalén","B) Nazaret","C) Belén Efrata","D) Hebrón"],answer:"C",explanation:"'Pero tú, Belén Efrata...de ti me saldrá el que será Señor en Israel.'",ref:"Miqueas 5:2"},
@@ -1080,7 +1131,7 @@ es: {
   {q:"Isaías 60:1 contiene un famoso llamado. ¿Qué dice?",options:["A) 'Venid, razonemos juntos'","B) 'Buscad a Jehová mientras puede ser hallado'","C) 'Levántate, resplandece; porque ha venido tu luz, y la gloria de Jehová ha nacido sobre ti'","D) 'Volveos a mí y yo me volveré a vosotros'"],answer:"C",explanation:"'Levántate, resplandece; porque ha venido tu luz, y la gloria de Jehová ha nacido sobre ti.'",ref:"Isaías 60:1"},
   {q:"Miqueas profetizó contra los líderes corruptos de Israel por hacer ¿qué?",options:["A) Cobrar impuestos excesivos del templo","B) 'Comer la carne de mi pueblo' — explotar y oprimir a los pobres","C) Hacer tratados con naciones extranjeras","D) Vender cargos del templo al mejor postor"],answer:"B",explanation:"Miqueas acusó a los gobernantes de Israel de aborrecer lo bueno y amar lo malo, desollar la piel del pueblo — una imagen gráfica de la opresión económica y judicial.",ref:"Miqueas 3:2–3"}
 ],
-28: [
+30: [
   {q:"Dios llamó a Jeremías para ser profeta antes de que naciera. ¿Cuál fue la objeción inicial de Jeremías?",options:["A) Que era demasiado pecador","B) Que estaba demasiado ocupado","C) Que era un niño que no sabía hablar","D) Que venía de una tribu que no podía profetizar"],answer:"C",explanation:"Jeremías dijo 'no sé hablar, porque soy niño' — y Dios respondió que ya lo había santificado y ordenado.",ref:"Jeremías 1:6"},
   {q:"Dios dijo a Jeremías que lo conocía y apartó antes de ¿qué evento?",options:["A) Antes de su bar mitzvá","B) Antes de que naciera Jeremías — antes de que Dios lo formara en el vientre","C) Antes del reinado de Josías","D) Antes de la caída del reino del norte"],answer:"B",explanation:"'Antes que te formase en el vientre te conocí, y antes que nacieses te santifiqué.'",ref:"Jeremías 1:5"},
   {q:"Jeremías 29:11 es una promesa muy amada. Dios declara que Sus pensamientos hacia Israel son planes de ¿qué?",options:["A) Castigo y corrección","B) Paz y no de mal — para darles un futuro y una esperanza","C) Restauración del templo","D) Victoria sobre Babilonia"],answer:"B",explanation:"'Porque yo sé los pensamientos que tengo acerca de vosotros...pensamientos de paz y no de mal, para daros el fin que esperáis.'",ref:"Jeremías 29:11"},
@@ -1092,7 +1143,7 @@ es: {
   {q:"Jeremías 20:9 describe el intento de Jeremías de dejar de profetizar. ¿Qué ocurrió?",options:["A) Perdió la voz por siete días","B) La palabra de Dios se volvió como fuego ardiente metido en sus huesos — no podía contenerse","C) Cayó en un sueño profundo y recibió nuevas visiones","D) Encontró paz y dejó de lamentarse"],answer:"B",explanation:"Jeremías trató de rendirse pero la palabra era como fuego en sus huesos; estaba cansado de contenerla y no podía.",ref:"Jeremías 20:9"},
   {q:"¿Cuál fue el destino final de Jerusalén que Jeremías profetizó y presenció?",options:["A) Fue perdonada por la intercesión de Jeremías","B) Fue conquistada por Babilonia, el templo quemado y Judá llevado al cautiverio","C) Cayó ante Egipto mientras Babilonia miraba","D) Fue parcialmente destruida pero reconstruida rápidamente"],answer:"B",explanation:"Babilonia bajo Nabucodonosor destruyó Jerusalén, quemó el templo de Salomón y llevó a Judá al cautiverio — exactamente como profetizó Jeremías.",ref:"Jeremías 39:1–9"}
 ],
-29: [
+31: [
   {q:"La famosa visión de Ezequiel en el capítulo 1 incluía cuatro seres vivientes, una expansión reluciente y ruedas dentro de ruedas. ¿Cuál fue la reacción de Ezequiel?",options:["A) Gritó de alegría","B) Cayó sobre su rostro","C) Corrió a decírselo al pueblo","D) Pidió a Dios una explicación"],answer:"B",explanation:"Cuando Ezequiel vio la gloria del Señor cayó sobre su rostro — y luego oyó una voz que le hablaba.",ref:"Ezequiel 1:28"},
   {q:"Dios llamó a Ezequiel 'hijo de hombre' a lo largo del libro. ¿Qué enfatiza este título?",options:["A) El linaje real de Ezequiel","B) La mortalidad y humanidad de Ezequiel ante lo divino","C) El papel sacerdotal de Ezequiel","D) La misión de Ezequiel a las naciones gentiles"],answer:"B",explanation:"'Hijo de hombre' subraya repetidamente el contraste entre la naturaleza creada de Ezequiel y la gloria trascendente de Dios.",ref:"Ezequiel 2:1"},
   {q:"Ezequiel 18:20 refuta un malentendido popular. ¿Qué principio establece?",options:["A) Los hijos siempre heredan la justicia de sus padres","B) El alma que pecare morirá — los hijos no cargarán la iniquidad de los padres; cada persona es responsable de sus propias decisiones","C) El castigo colectivo se aplica a todas las generaciones","D) El arrepentimiento puede eliminar el juicio de toda la historia de una nación"],answer:"B",explanation:"'El alma que pecare, esa morirá; el hijo no llevará el pecado del padre' — responsabilidad moral individual.",ref:"Ezequiel 18:20"},
