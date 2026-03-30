@@ -470,7 +470,7 @@ const T = {
       "The scriptures are a lifelong journey. Keep coming back."
     ],
     btnNewLesson:"Choose Lesson", btnViewLB:"Leaderboard",
-    lbTitle:"Leaderboard", lbSub:"Combined rankings · All participants",
+    lbTitle:"Leaderboard", lbSub:"Cumulative score · All weeks · All participants",
     lbAll:"All Weeks", lbWeek:w=>`Week ${w}`,
     lbEmpty:"No scores yet for this week. Be the first!",
     lbNote:"One attempt per week per device. Your score is marked ★.",
@@ -521,7 +521,7 @@ const T = {
       "Las escrituras son un camino de toda la vida. Sigue adelante."
     ],
     btnNewLesson:"Elegir Lección", btnViewLB:"Tabla de Líderes",
-    lbTitle:"Tabla de Líderes", lbSub:"Clasificación combinada · Todos los participantes",
+    lbTitle:"Tabla de Líderes", lbSub:"Puntaje acumulado · Todas las semanas · Todos los participantes",
     lbAll:"Todas las Semanas", lbWeek:w=>`Semana ${w}`,
     lbEmpty:"Sin puntajes aún. ¡Sé el primero!",
     lbNote:"Un intento por semana por dispositivo. Tu puntaje está marcado ★.",
@@ -1481,8 +1481,9 @@ async function loadLB(){
   }
   el.innerHTML = `<div class="lb-spinner">${t('lbSpinner')}</div>`;
   const weekSel = document.getElementById('lbWeekSel').value;
-  let url = `${sbUrl}/rest/v1/scores?select=name,score,total,week&order=score.desc&limit=25`;
-  if(weekSel!=='all'){
+  const isAllWeeks = weekSel === 'all';
+  let url = `${sbUrl}/rest/v1/scores?select=name,score,total,week&limit=1000`;
+  if(!isAllWeeks){
     const lesson = getLessons()[parseInt(weekSel)];
     url += `&week=eq.${lesson.w}`;
   }
@@ -1495,11 +1496,30 @@ async function loadLB(){
       return;
     }
     if(!Array.isArray(rows)||!rows.length){ el.innerHTML=`<div class="lb-empty">${t('lbEmpty')}</div>`; return; }
+
+    // Aggregate per person: sum scores, deduplicate within each week (best score per week per person)
+    const people = new Map(); // key: lowercase name -> { name, weekBests: Map<week, score> }
+    rows.forEach(r => {
+      const key = r.name.trim().toLowerCase();
+      if(!people.has(key)) people.set(key, { name: r.name.trim(), weekBests: new Map() });
+      const p = people.get(key);
+      const prev = p.weekBests.get(r.week) || 0;
+      if(r.score > prev) p.weekBests.set(r.week, r.score);
+    });
+
+    // Build sorted leaderboard
+    const leaderboard = Array.from(people.values()).map(p => ({
+      name: p.name,
+      total: Array.from(p.weekBests.values()).reduce((a,b)=>a+b, 0),
+      weeks: p.weekBests.size
+    })).sort((a,b) => b.total - a.total).slice(0, 25);
+
     const [th1,th2,th3] = t('lbTh');
-    let html = `<table><thead><tr><th>${th1}</th><th>${th2}</th><th style="text-align:right">${th3}</th></tr></thead><tbody>`;
-    rows.forEach((r,i)=>{
-      const isMe = r.name===userName;
-      html+=`<tr class="${isMe?'row-me':''}"><td class="td-rank">${i+1}</td><td>${r.name}${isMe?' ★':''}</td><td class="td-score">${r.score}/${r.total}</td></tr>`;
+    const th4 = isAllWeeks ? (lang==='en'?'Weeks':'Semanas') : '';
+    let html = `<table><thead><tr><th>${th1}</th><th>${th2}</th>${isAllWeeks?`<th style="text-align:center;font-size:11px">${th4}</th>`:''}<th style="text-align:right">${th3}</th></tr></thead><tbody>`;
+    leaderboard.forEach((r,i)=>{
+      const isMe = r.name.trim().toLowerCase()===(userName||'').trim().toLowerCase();
+      html+=`<tr class="${isMe?'row-me':''}"><td class="td-rank">${i+1}</td><td>${r.name}${isMe?' ★':''}</td>${isAllWeeks?`<td class="td-score" style="text-align:center;color:var(--ink-3)">${r.weeks}</td>`:''}<td class="td-score">${r.total}</td></tr>`;
     });
     html+='</tbody></table>';
     el.innerHTML=html;
